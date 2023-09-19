@@ -6,9 +6,12 @@
 #include <iostream>
 #include <stdexcept>
 
-double SubCommand::execute(std::vector<double>& ops){
-    if(ops.size() < 2 ) {
-        throw std::invalid_argument{"Not enough arguments"};
-    }
-    return std::accumulate( std::next(ops.begin()), ops.end(), *ops.begin(),  std::minus<double>{});
+double SubCommand::execute(){
+
+    return std::accumulate( std::next(operands.begin()), operands.end(), *operands.begin(),  std::minus<double>{});
+}
+
+std::unique_ptr<Command> SubCommand::clone() const
+{
+    return std::make_unique<SubCommand>(*this);
 }

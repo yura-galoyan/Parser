@@ -4,9 +4,11 @@
 #include <functional>
 #include <stdexcept>
 
-double MulCommand::execute(std::vector<double>& ops){
-    if(ops.size() < 2 ) {
-        throw std::invalid_argument{"Not enough arguments"};
-    }
-    return std::accumulate( ops.begin(), ops.end(), 1, std::multiplies<double>{});
+double MulCommand::execute(){
+    return std::accumulate( operands.begin(), operands.end(), 1, std::multiplies<double>{});
+}
+
+std::unique_ptr<Command> MulCommand::clone() const
+{
+    return std::make_unique<MulCommand>(*this);
 }

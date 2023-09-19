@@ -8,7 +8,8 @@
 class AddCommand : public Command
 {
 public:
-    double execute(std::vector<double>&) override ;
+    AddCommand();
+    double execute() override ;
     std::unique_ptr<Command> clone() const override;
 };
 

@@ -6,7 +6,8 @@
 class OrCommand : public Command
 {
 public:
-    double execute(std::vector<double>&) override;
+    double execute( ) override;
+    std::unique_ptr<Command> clone() const override;
 
 };
 

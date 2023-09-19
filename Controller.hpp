@@ -10,7 +10,7 @@ class Controller
 public:
     Controller(std::unique_ptr<AbstractInputOutput> ioPtr);
     void run();
-
+    void fillCommand(Command&, std::vector<std::string>&&);
 
 
 private:

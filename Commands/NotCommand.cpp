@@ -4,15 +4,11 @@
 
 #include <iostream>
 
-double NotCommand::execute(std::vector<double>& ops){
+double NotCommand::execute(){
+    return !static_cast<bool>(operands[0].second);
+}
 
-    if( ops.size() != 1){
-        throw std::invalid_argument{"Wrong number of arguments"};
-    }
-
-    if(ops[0] != 0 && ops[0] != 1){
-        throw std::invalid_argument{"Wrong argument"};
-    }
-
-    return !static_cast<bool>(ops[0]);
+std::unique_ptr<Command> NotCommand::clone() const
+{
+    return std::make_unique<NotCommand>(*this);
 }

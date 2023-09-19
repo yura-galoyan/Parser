@@ -9,6 +9,6 @@ std::string ConsoleInputOutput::getInput() const {
 }
 
 void ConsoleInputOutput::output(const std::string_view& out) const{
-    std::cout << &out << std::endl;
+    std::cout << out << std::endl;
 }
 

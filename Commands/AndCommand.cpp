@@ -4,14 +4,15 @@
 #include <functional>
 #include <numeric>
 
-double AndCommand::execute(std::vector<double>& ops){
-    if( ops.size() < 2){
-        throw std::invalid_argument{"Not enough arguments"};
-    }
+AndCommand::AndCommand(){
+}
 
-    if(!std::all_of(ops.begin(), ops.end(),[](const auto& op){ return op == 0 || op == 1; } )){
-        throw std::invalid_argument{"Wrong arguments"};
-    };
+double AndCommand::execute()
+{
+    return std::accumulate(operands.begin(), operands.end(), 1, std::logical_and<double>{});
+}
 
-    return std::accumulate(ops.begin(), ops.end(), 1, std::logical_and<double>{});
+std::unique_ptr<Command> AndCommand::clone() const
+{
+    return std::make_unique<AndCommand>(*this);
 }
