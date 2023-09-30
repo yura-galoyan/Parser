@@ -9,13 +9,12 @@ class InputOutputSystem
 public:
     static std::string getInput(std::istream& in = std::cin);
     template<typename...Args>
-    static void output(Args... args);
+    static void output(const Args&... args);
 };
 
+template <typename... Args>
+inline void InputOutputSystem::output(const Args &... args){
+    ((std::cout<<args), ...);
+}
 
 #endif //INPUT_OUTPUT_SYSTEM_HPP
-
-template <typename... Args>
-inline void InputOutputSystem::output(Args... args){
-    ((std::cout << args),...);
-}

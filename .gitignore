@@ -10,3 +10,5 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 photo_2023-09-27_11-42-49.jpg
+.vscode/
+.vscode
