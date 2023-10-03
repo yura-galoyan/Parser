@@ -4,18 +4,19 @@
 #include <string>
 #include <unordered_set>
 #include <unordered_map>
-#include "Tokenizer.hpp"
+#include <memory>
+#include <vector>
+
 
 class Command{
 public:
-    virtual std::string exec() = 0;
+    virtual std::string exec(std::vector<std::unique_ptr<Item>>& itemList ) = 0;
     virtual std::unique_ptr<Command> clone() const = 0;
     virtual bool isValid() const = 0;
-    void fillCommand(const Tokenizer::Tokens& tokens );
     
 protected:
     std::unordered_set<std::string> m_options;
-    std::unordered_map<std::string, int> m_arguments;
+    std::unordered_map<std::string, double> m_arguments;
 };
 
 #endif //COMMAND_HPP

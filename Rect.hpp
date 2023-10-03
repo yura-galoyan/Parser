@@ -7,8 +7,8 @@ class Rect : public Item
 {
 public:
     struct Point{
-        int x;
-        int y;
+        double x;
+        double y;
     };
 
     Rect(){ setType(Item::Type::Rect); }

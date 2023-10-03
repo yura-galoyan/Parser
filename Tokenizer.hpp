@@ -10,8 +10,9 @@ class Tokenizer
 public:
     using Token = std::string;
     using Tokens = std::vector<Token>;
+    
 public:
-    Tokens getTokens(std::istringstream stream);
+    Tokens split(std::string input);
 };
 
 

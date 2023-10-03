@@ -2,6 +2,6 @@
 
 std::string InputOutputSystem::getInput(std::istream& in){
     std::string tmp;
-    std::getline(std::cin,tmp);
+    std::getline(in,tmp);
     return tmp;
 }
