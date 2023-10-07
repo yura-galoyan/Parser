@@ -8,7 +8,7 @@
 class CommandParser
 {
 public:
-    Tokenizer::Tokens parse(const Tokenizer::Tokens& tokens);
+    bool parse(const Tokenizer::Tokens& tokens);
 };
 
 #endif //COMMAND_PARSER_HPP

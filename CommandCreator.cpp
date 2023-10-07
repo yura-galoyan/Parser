@@ -17,4 +17,5 @@ std::unique_ptr<Command> CommandCreator::createCommand(const Tokenizer::Tokens& 
 
 
 
+    return std::unique_ptr<Command>{};
 }

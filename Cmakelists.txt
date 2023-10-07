@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.15)
+Project(a)
+
+add_executable(a
+    main.cpp
+    AddCommand.cpp
+    CommandCreator.cpp
+    CommandParser.cpp
+    CommandRegistry.cpp
+    Controller.cpp
+    InputOutputSystem.cpp
+    ItemFactory.cpp
+    SemanticAnalyzer.cpp
+    Tokenizer.cpp
+)
