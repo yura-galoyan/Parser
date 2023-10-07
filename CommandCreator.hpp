@@ -4,7 +4,7 @@
 #include "Tokenizer.hpp"
 #include "Command.hpp"
 
-class Interpreter
+class CommandCreator
 {
 public:
     std::unique_ptr<Command> createCommand(const Tokenizer::Tokens& tokens);

@@ -5,7 +5,7 @@
 
 #include "CommandParser.hpp"
 #include "Tokenizer.hpp"
-#include "Interpreter.hpp"
+#include "CommandCreator.hpp"
 #include "Item.hpp"
 class Controller
 {
@@ -13,9 +13,9 @@ public:
     void run();
 
 private:
-    std::vector<std::unique_ptr<Item>> itemList;
+    std::vector<std::unique_ptr<Item>> m_itemList;
+    CommandCreator m_commandCreator;
     CommandParser m_parser;
-    Interpreter m_interpreter;
     Tokenizer m_tokenizer;
 };
 

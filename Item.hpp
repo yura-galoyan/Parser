@@ -8,7 +8,7 @@ public:
     Type getType(){ return m_type;  }
 
 protected:
-    bool setType(Type t){ t = m_type; }
+    bool setType(Type t){ t = m_type; return true; }
 
 private:
     Type m_type;    

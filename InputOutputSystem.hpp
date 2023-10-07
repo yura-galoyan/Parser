@@ -4,8 +4,7 @@
 #include <iostream>
 #include <string>
 
-class InputOutputSystem
-{
+class InputOutputSystem{
 public:
     static std::string getInput(std::istream& in = std::cin);
     template<typename...Args>

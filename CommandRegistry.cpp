@@ -5,8 +5,8 @@
 
 CommandRegistry::CommandRegistry(){
     m_commands["add"] = std::make_unique<AddCommand>();
-    m_commands["display"] = std::make_unique<AddCommand>();
-    m_commands["quit"] = std::make_unique<AddCommand>();
+    // m_commands["display"] = std::make_unique<AddCommand>();
+    // m_commands["quit"] = std::make_unique<AddCommand>();
 }
 
 std::unique_ptr<Command> CommandRegistry::findCommand(std::string key){
