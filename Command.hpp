@@ -10,8 +10,9 @@
 class Command{
 public:
     virtual std::string exec(std::vector<std::unique_ptr<Item>>& itemList) = 0;
-    virtual std::unique_ptr<Command> clone() const = 0;
-    
+    virtual std::unique_ptr<Command> clone() const = 0;    
+    void addArgument(std::string key, double value);
+
 protected:
     std::unordered_set<std::string> m_options;
     std::unordered_map<std::string, double> m_arguments;

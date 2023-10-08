@@ -24,9 +24,6 @@ std::string AddCommand::exec(std::vector<std::unique_ptr<Item>>& itemList){
     return std::string{"Item was added"};
 }
 
-void AddCommand::addArgument(std::string key, double value){
-    m_arguments[key] = value;
-}
 
 void AddCommand::setItemType(std::string itemName){
     m_itemName = itemName;
@@ -35,5 +32,6 @@ void AddCommand::setItemType(std::string itemName){
 
 std::unique_ptr<Command> AddCommand::clone() const
 {
-    return std::unique_ptr<Command>();
+    return std::make_unique<AddCommand>();
 }
+

@@ -28,6 +28,7 @@ void Controller::run(){
         bool isSyntaxApproved = m_parser.parse(tokenArray);
 
         if(isSyntaxApproved) { 
+            ///DELETE:ME:
             std::cout << "syntax is fine" << std::endl; 
             bool isSemanticsApproved = m_semanticAnalyzer.check(tokenArray);
             if(isSemanticsApproved){
