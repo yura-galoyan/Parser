@@ -5,7 +5,7 @@
 
 AddCommand::AddCommand(){
     m_options.insert("-name");
-    m_argumentCount = 4;
+    
 }
 
 std::string AddCommand::exec(std::vector<std::unique_ptr<Item>>& itemList){
@@ -24,8 +24,6 @@ std::string AddCommand::exec(std::vector<std::unique_ptr<Item>>& itemList){
 
 void AddCommand::setItemType(std::string itemName){
     m_itemName = itemName;
-
-    
 }
 
 
@@ -36,31 +34,5 @@ std::unique_ptr<Command> AddCommand::clone() const
 
 bool AddCommand::hasOption(std::string token)
 {
-    
-    
-    if(m_options.count(token)){
-        return true;
-    }
-
-    if( a == 1){
-        if(std::find_if(  options.begin(), options.end(), [token](const auto& option_set  ) {
-            return option_set.first == token;
-        }   ) != options.end()){
-            return true;
-            m_itemName = token;
-            --a;
-        }
-        return false;
-    }
-    else{
-        if((!options[m_itemName].count(token))){
-            return false;
-        }
-    }
-
     return true;
-
-
-
-
 }

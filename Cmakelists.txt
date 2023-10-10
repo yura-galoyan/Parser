@@ -5,6 +5,7 @@ add_executable(a
     main.cpp
     Command.cpp
     AddCommand.cpp
+    DisplayCommand.cpp
     CommandCreator.cpp
     CommandParser.cpp
     CommandRegistry.cpp

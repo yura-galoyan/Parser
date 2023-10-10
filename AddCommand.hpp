@@ -15,9 +15,8 @@ public:
 private:
     int m_argumentCount;
     std::string m_itemName;
-
-
-    std::unordered_map<std::string,std::unordered_set<std::string>> options;
+    std::unordered_map<std::string,
+    std::unordered_set<std::string>> m_args;
 
 //    "Rect" -> " -x1 -y1 -x2 -y2"
 //    "Circle" -> "-r -x -y"

@@ -1,30 +1,28 @@
+
 #include "CommandCreator.hpp"
 
 #include "AddCommand.hpp"
 
-std::unique_ptr<Command> CommandCreator::createCommand(const Tokenizer::Tokens& tokens){
+CommandCreator::CommandCreator()
+{
 
-    std::unique_ptr<Command> cmd = std::make_unique<AddCommand>();
+}
+
+std::unique_ptr<Command> CommandCreator::createCommand(const Tokenizer::Tokens &tokens)
+{
+    std::unique_ptr<Command> cmd = m_registry.findCommand(tokens[0]);
+
     if(tokens[0] == "add"){
-        if(tokens[2] == "rect"){
-            static_cast<AddCommand*>(cmd.get())->setItemType("rect");
-            cmd->addArgument("-x1", std::stod(tokens[4]));
-            cmd->addArgument("-y1", std::stod(tokens[6]));
-            cmd->addArgument("-x2", std::stod(tokens[8]));
-            cmd->addArgument("-y2", std::stod(tokens[10]));
-        }
-        else if(tokens[2] == "circle"){
-            static_cast<AddCommand*>(cmd.get())->setItemType("circle");
-            cmd->addArgument("-x", std::stod(tokens[4]));
-            cmd->addArgument("-y", std::stod(tokens[6]));
-            cmd->addArgument("-r", std::stod(tokens[8]));
+        static_cast<AddCommand*>(cmd.get())->setItemType(tokens[2]);
+        for(int i = 3; i < tokens.size(); i+=2){
+            cmd->addArgument(tokens[i], std::stod(tokens[i + 1]));
         }
         return cmd;
     }
-
-
-
-
+    if(tokens[0] == "display"){
+        cmd->addArgument(tokens[1],std::stod(tokens[1 + 1]));
+        return cmd;
+    }
 
     return std::unique_ptr<Command>{};
 }
