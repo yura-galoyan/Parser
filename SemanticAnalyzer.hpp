@@ -2,19 +2,16 @@
 #define SEMANTIC_ANALYZER_HPP
 
 #include "Tokenizer.hpp"
+#include "CommandRegistry.hpp"
 
-#include <vector>
-#include <unordered_map>
-#include <string>
 class SemanticAnalyzer
 {   
-    using TrMatrix = std::vector<std::unordered_map<std::string,int>>;
 public:
     SemanticAnalyzer();
     bool check(const Tokenizer::Tokens& tokens) const ;
 
 private:
-    TrMatrix m_trMatrix;
+    CommandRegistry m_registry;
 };
 
 

@@ -3,6 +3,7 @@ Project(a)
 
 add_executable(a
     main.cpp
+    Command.cpp
     AddCommand.cpp
     CommandCreator.cpp
     CommandParser.cpp

@@ -12,7 +12,7 @@ public:
     CommandRegistry();
     using Commands = std::unordered_map<std::string,std::unique_ptr<Command>>;
 
-    std::unique_ptr<Command> findCommand(std::string key);
+    std::unique_ptr<Command> findCommand(std::string key) const;
 
 private:
     Commands m_commands;

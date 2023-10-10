@@ -9,7 +9,7 @@ CommandRegistry::CommandRegistry(){
     // m_commands["quit"] = std::make_unique<AddCommand>();
 }
 
-std::unique_ptr<Command> CommandRegistry::findCommand(std::string key){
+std::unique_ptr<Command> CommandRegistry::findCommand(std::string key) const{
     auto command = m_commands.find(key);
     if(command == m_commands.end()){
         throw std::runtime_error{"invalid command"};
