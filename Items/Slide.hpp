@@ -1,13 +1,22 @@
 #ifndef SLIDE_HPP
 #define SLIDE_HPP
 
-#include "Item.hpp"
+#include <vector>
+#include <memory>
 
+#include "Item.hpp"
+/// @brief TODO: improve ase a c++ class
 class Slide
 {
 public:
-    void addItem(Item::Type type/*,*/ );
-    void removeItem(/* something... */);
+    /// TODO: write copy constructor
+    
+    void addItem(/*,*/ );
+    void removeItem(int id);
+
+private:
+    std::vector<std::shared_ptr<Item>> items;
+
 };
 
 

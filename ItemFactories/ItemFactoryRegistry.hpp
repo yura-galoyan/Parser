@@ -6,7 +6,6 @@
 #include <memory>
 
 #include "ItemFactory.hpp"
-
 class ItemFactoryRegistry
 {
 public:
@@ -15,7 +14,6 @@ public:
     
 private:
     std::unordered_map<std::string,std::unique_ptr<ItemFactory>> m_registry;
-    std::shared_ptr<Document> m_doc{nullptr};
 
 };
 

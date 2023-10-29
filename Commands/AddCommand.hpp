@@ -10,12 +10,10 @@ public:
     AddCommand(std::shared_ptr<Document> doc);
     std::string exec() override;
     void setItemType(Item::Type type);
+    void setActiveItem(std::unique_ptr<Item>&& item);
 
 private:
-    std::string m_itemName;
-    std::unordered_map<std::string,
-    std::unordered_set<std::string>> m_args;
-
+    std::unique_ptr<Item> activeItem;
 private:
     std::shared_ptr<Document> m_doc;
     Item::Type m_type{Item::Type::Item};

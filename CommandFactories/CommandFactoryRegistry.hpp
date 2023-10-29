@@ -6,7 +6,7 @@
 #include <string>
 
 #include "CommandFactory.hpp"
-#include "../Document.hpp"
+#include "../Items/Document.hpp"
 class CommandFactoryRegistry
 {
 public:

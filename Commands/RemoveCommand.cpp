@@ -4,11 +4,7 @@ RemoveCommand::RemoveCommand(std::shared_ptr<Document> doc) : m_doc(doc)
 {
 }
 
-std::string RemoveCommand::exec(std::vector<std::unique_ptr<Item>> &itemList)
+std::string RemoveCommand::exec()
 {
-    
-    
-
-
-    return m_doc->removeSlide(/* arguments... */);
+    m_doc->getCurrSlide().removeItem(m_id);
 }

@@ -1,23 +1,24 @@
 #ifndef DOCUMENT_HPP
 #define DOCUMENT_HPP
 
+#include <vector>
+
 #include "Slide.hpp"
 
+/// @brief TODO: improve ase a c++ class
 class Document
 {
 public:
-    void addSlide();
+    void addSlide(const Slide& slide);
     void removeSlide(Slide slide);
     void removeSlide(int id);
 
 
 public:
-    auto& getCurrSlide(){ return slides[curr_id]; }
-
-
+    auto& getCurrSlide(){ return m_slides[curr_id]; }
 
 private:
-    std::vector<Slide> slides;
+    std::vector<Slide> m_slides;
     int curr_id;
 };
 

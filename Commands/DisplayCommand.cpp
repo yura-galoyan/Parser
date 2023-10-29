@@ -5,7 +5,7 @@ DisplayCommand::DisplayCommand()
 
 }
 
-std::string DisplayCommand::exec(std::vector<std::unique_ptr<Item>> &itemList)
+std::string DisplayCommand::exec()
 {
     // display item list
 
@@ -16,12 +16,3 @@ void DisplayCommand::setItemType(std::string itemName)
 {
 }
 
-std::unique_ptr<Command> DisplayCommand::clone() const
-{
-    return std::make_unique<DisplayCommand>(); 
-}
-
-bool DisplayCommand::hasOption(std::string)
-{
-    return false;
-}

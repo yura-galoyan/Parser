@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include "Factoires/CommandFactoryRegistry.hpp"
+#include "CommandFactories/CommandFactoryRegistry.hpp"
 #include "InputOutputSystem.hpp"
 #include "CommandParser.hpp"
 #include "Document.hpp"
