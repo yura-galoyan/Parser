@@ -1,28 +1,22 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include <vector>
-
-#include "SemanticAnalyzer.hpp"
-#include "CommandCreator.hpp"
+#include "Factoires/CommandFactoryRegistry.hpp"
+#include "InputOutputSystem.hpp"
 #include "CommandParser.hpp"
-#include "Tokenizer.hpp"
-#include "Item.hpp"
-
+#include "Document.hpp"
 class Controller
 {
 public:
+    Controller(std::shared_ptr<Document> doc = nullptr);
     void run();
     
 
 
 private:
-    std::vector<std::unique_ptr<Item>> m_itemList;
-    SemanticAnalyzer m_semanticAnalyzer;
-    CommandCreator m_commandCreator;
+    std::shared_ptr<Document> m_doc;
+    CommandFactoryRegistry m_CommandFactoryRegistry;
     CommandParser m_parser;
-    Tokenizer m_tokenizer;
-
 };
 
 

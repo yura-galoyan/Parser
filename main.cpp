@@ -1,7 +1,7 @@
 
-#include "Controller.hpp"
+#include "Application.hpp"
 
 int main(){
-    Controller controller;
-    controller.run();
+    Application app;
+    return app.exec();
 }

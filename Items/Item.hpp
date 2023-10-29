@@ -4,7 +4,7 @@
 class Item
 {
 public:
-    enum class Type{Rect, Circle, Poly, Line };
+    enum class Type{Slide, Item};
     Type getType(){ return m_type;  }
 
 protected:

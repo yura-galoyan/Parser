@@ -8,7 +8,10 @@
 class CommandParser
 {
 public:
-    bool parse(const Tokenizer::Tokens& tokens);
+    std::string parse(const std::string& string);
+
+private:
+    Tokenizer Tokenizer;
 };
 
 #endif //COMMAND_PARSER_HPP
