@@ -1,7 +1,7 @@
 #include "AddCommandFactory.hpp"
 
 #include "../Commands/AddCommand.hpp"
-#include "Tokenizer.hpp"
+#include "../Tokenizer.hpp"
 
 std::unique_ptr<Command> AddCommandFactory::createCommand(const std::string& input)
 {

@@ -5,8 +5,8 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <memory>
-#include "Tokenizer.hpp"
-#include "Item.hpp"
+#include "../Tokenizer.hpp"
+#include "../Items/Item.hpp"
 
 class Command{
 public:

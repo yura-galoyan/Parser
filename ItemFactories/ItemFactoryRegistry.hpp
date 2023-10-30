@@ -9,7 +9,7 @@
 class ItemFactoryRegistry
 {
 public:
-    ItemFactoryRegistry(/*std::shared_ptr<Document> doc*/);
+    ItemFactoryRegistry();
     std::unique_ptr<ItemFactory>& operator[](const std::string& key);
     
 private:

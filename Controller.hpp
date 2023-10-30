@@ -4,7 +4,7 @@
 #include "CommandFactories/CommandFactoryRegistry.hpp"
 #include "InputOutputSystem.hpp"
 #include "CommandParser.hpp"
-#include "Document.hpp"
+#include "Items/Document.hpp"
 class Controller
 {
 public:

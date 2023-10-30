@@ -2,7 +2,7 @@
 #define APPLICATION_HPP
 
 #include "Controller.hpp"
-#include "Document.hpp"
+#include "Items/Document.hpp"
 
 #include <memory>
 

@@ -1,7 +1,4 @@
-#include <algorithm>
-
 #include "AddCommand.hpp"
-#include "Rect.hpp"
 
 
 AddCommand::AddCommand(std::shared_ptr<Document> doc) 
@@ -10,9 +7,8 @@ AddCommand::AddCommand(std::shared_ptr<Document> doc)
 
 }
 
-std::string AddCommand::exec()
-{
-    
+std::string AddCommand::exec(){
+    m_doc->getCurrSlide().addItem(std::move(activeItem));
 }
 
 void AddCommand::setItemType(Item::Type type){

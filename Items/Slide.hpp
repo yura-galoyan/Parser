@@ -11,11 +11,11 @@ class Slide
 public:
     /// TODO: write copy constructor
     
-    void addItem(/*,*/ );
+    void addItem(std::unique_ptr<Item> item );
     void removeItem(int id);
 
 private:
-    std::vector<std::shared_ptr<Item>> items;
+    std::vector<std::unique_ptr<Item>> items;
 
 };
 
