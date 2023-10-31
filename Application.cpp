@@ -1,6 +1,6 @@
 #include "Application.hpp"
 
-Application::Application()
+Application::Application() : m_doc(std::make_shared<Document>()), m_controller(m_doc)
 {
 
 }

@@ -1,6 +1,6 @@
 #include "Tokenizer.hpp"
 
-Tokenizer::Tokens Tokenizer::split(std::string input){
+Tokenizer::Tokens Tokenizer::split(std::string input) const {
     Tokens tokens;
     Token tmp;
     std::istringstream in(input);

@@ -1,9 +1,8 @@
 #ifndef ADD_COMMAND_HPP
 #define ADD_COMMAND_HPP
 
-#include "../Items/Document.hpp"
 #include "Command.hpp"
-
+class Document;
 class AddCommand : public Command
 {
 public:

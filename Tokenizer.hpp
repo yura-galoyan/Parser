@@ -12,7 +12,7 @@ public:
     using Tokens = std::vector<Token>;
     
 public:
-    Tokens split(std::string input);
+    Tokens split(std::string input) const;
 };
 
 

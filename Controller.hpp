@@ -8,7 +8,7 @@
 class Controller
 {
 public:
-    Controller(std::shared_ptr<Document> doc = nullptr);
+    Controller(std::shared_ptr<Document> doc);
     void run();
     
 

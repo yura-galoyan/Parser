@@ -12,7 +12,7 @@ public:
 };
 
 template <typename... Args>
-inline void InputOutputSystem::output(std::ostream& out, const Args &... args){
+inline void InputOutputSystem::output(std::ostream& out, const Args&... args){
     ((out<<args), ...);
 }
 

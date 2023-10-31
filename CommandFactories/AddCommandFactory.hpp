@@ -4,12 +4,15 @@
 #include "CommandFactory.hpp"
 #include "../ItemFactories/ItemFactoryRegistry.hpp"
 
+/// FIXME: resolve this 
+class Document;
+class Slide;
 
 class AddCommandFactory : public CommandFactory
 {
 public:
-    AddCommandFactory(std::shared_ptr<Document> doc, std::shared_ptr<Slide> slide) : m_doc(doc) { };
-    std::unique_ptr<Command> createCommand(const std::string& input) override;
+    AddCommandFactory(std::shared_ptr<Document> doc, std::shared_ptr<Slide> slide = nullptr) : m_doc(doc) { };
+    std::unique_ptr<Command> createCommand(const std::string& input)  override;
     /// @brief implement
     void setDocument(std::shared_ptr<Document> doc);
     /// @brief implement

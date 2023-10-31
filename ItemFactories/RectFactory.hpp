@@ -9,5 +9,4 @@ public:
     std::unique_ptr<Item> createItem(const Tokenizer::Tokens& input) const override;
 };
 
-
 #endif //RECT_FACTORY_HPP

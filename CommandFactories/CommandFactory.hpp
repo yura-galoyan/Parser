@@ -8,7 +8,7 @@
 class CommandFactory
 {
 public:
-    virtual std::unique_ptr<Command> createCommand(const std::string& input) = 0;
+    virtual std::unique_ptr<Command> createCommand(const std::string& input)  = 0;
 
 
 protected:

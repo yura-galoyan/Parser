@@ -11,30 +11,18 @@ class Document
 {
 public:
     Document();
-    Document(const Document&);
-    Document(Document&&);
-    Document& operator=(const Document& );
-    Document& operator=(Document&& );
 
-    auto begin() { m_slides.begin(); }
-    
-    auto begin() const { m_slides.cbegin(); }
-    
-    auto cbegin() { m_slides.cbegin(); }
-
-    auto end() { m_slides.end(); }
-    
-    auto end() const { m_slides.cend(); }
-    auto cend() { m_slides.cend(); }
-
+public:
     void addSlide(const Slide& slide);
     void addSlide(Slide&& slide);
     void removeSlide(Slide slide);
     void removeSlide(int id);
 
-
 public:
-    auto& getCurrSlide(){ return m_slides[curr_slide_id]; }
+    Slide& getCurrSlide();
+    void displayContent() const;
+    void displaySlideContent(int id) const;
+
 
 private:
     std::vector<Slide> m_slides;

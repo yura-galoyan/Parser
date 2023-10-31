@@ -1,6 +1,11 @@
 #ifndef ITEM_HPP
 #define ITEM_HPP
 
+struct Point{
+    double x;
+    double y;
+};
+
 class Item
 {
 public:
@@ -8,7 +13,7 @@ public:
     Type getType(){ return m_type;  }
 
 protected:
-    bool setType(Type t){ t = m_type; return true; }
+    bool setType(Type t){ m_type = t; return true; }
 
 private:
     Type m_type;    

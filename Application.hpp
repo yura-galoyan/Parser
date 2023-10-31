@@ -13,10 +13,8 @@ public:
     int exec();
 
 private:
-    Controller m_controller;
-
-private:
     std::shared_ptr<Document> m_doc;
+    Controller m_controller;
 
 };
 

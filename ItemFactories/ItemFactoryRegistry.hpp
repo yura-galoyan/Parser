@@ -11,6 +11,7 @@ class ItemFactoryRegistry
 public:
     ItemFactoryRegistry();
     std::unique_ptr<ItemFactory>& operator[](const std::string& key);
+    const std::unique_ptr<ItemFactory>& operator[](const std::string& key) const;
     
 private:
     std::unordered_map<std::string,std::unique_ptr<ItemFactory>> m_registry;
