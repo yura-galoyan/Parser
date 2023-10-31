@@ -2,7 +2,7 @@
 
 Application::Application()
 {
-    m_doc->addSlide(Slide{});
+
 }
 
 int Application::exec()
