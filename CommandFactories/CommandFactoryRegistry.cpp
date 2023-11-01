@@ -12,6 +12,7 @@ CommandFactoryRegistry::CommandFactoryRegistry(std::shared_ptr<Document> doc)
     m_registry["remove"] = std::make_unique<RemoveCommandFactory>(doc);
     m_registry["display"] = std::make_unique<DisplayCommandFactory>(doc);
     m_registry["addslide"] = std::make_unique<AddSlideCommandFactory>(doc);
+    
 }
 
 std::unique_ptr<CommandFactory>& CommandFactoryRegistry::operator[](const std::string &key)

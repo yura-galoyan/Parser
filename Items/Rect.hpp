@@ -21,6 +21,11 @@ public:
         return out;
     }
 
+public:
+    std::unique_ptr<Item> clone() const override; 
+
+    
+
 private:
     Point m_TopLeft;
     Point m_BottomRight;

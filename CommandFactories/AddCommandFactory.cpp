@@ -10,7 +10,6 @@ std::unique_ptr<Command> AddCommandFactory::createCommand(const std::string& inp
     auto tokens = tokenizer.split(input);    
 
     //  "add -type rect -x1 1 -y1 2 -x2 3 -y2 4";
-
     std::unique_ptr<Item> item = m_itemRegistry[tokens[2]]->createItem(tokens);
     
     cmd->setActiveItem(std::move(item));

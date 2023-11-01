@@ -13,8 +13,8 @@ public:
 
     Slide() = default;
     
-    Slide(const Slide& other){};
-    //Slide& operator=(const Slide& other);
+    Slide(const Slide& other);
+    Slide& operator=(Slide other);
 //
     //Slide(Slide&& other);
     //Slide& operator=(Slide&& other);

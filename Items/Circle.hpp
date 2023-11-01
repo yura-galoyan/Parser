@@ -21,6 +21,7 @@ public:
         return out;
     }
 
+    std::unique_ptr<Item> clone() const override; 
 
 private:
     Point m_center;

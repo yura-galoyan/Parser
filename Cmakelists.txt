@@ -34,5 +34,4 @@ set (Sources main.cpp
     InputOutputSystem.cpp
     Tokenizer.cpp
 )
- 
 add_executable(PowerPoint ${Sources} )
