@@ -15,7 +15,7 @@ private:
     std::unique_ptr<Item> activeItem;
 private:
     std::shared_ptr<Document> m_doc;
-    Item::Type m_type{Item::Type::Item};
+    Item::Type m_type;
 
 };
 

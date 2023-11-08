@@ -1,7 +1,9 @@
 #include "Rect.hpp"
 
-Rect::Rect(Point topLeft, Point bottomRight)
+Rect::Rect(double x1, double y1, double x2, double y2)
 {
-    attributes()["top left"] = topLeft;
-    attributes()["bottom right"] = bottomRight;
+    attributes()["x1"] = std::to_string(x1);
+    attributes()["y1"] = std::to_string(y1);
+    attributes()["x2"] = std::to_string(x2);
+    attributes()["y2"] = std::to_string(y2);
 }

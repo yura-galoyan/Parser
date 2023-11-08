@@ -4,15 +4,13 @@
 #include "Item.hpp"
 #include <ostream>
 
-#include<unordered_map>
-#include <any>
 
 
 
 class Rect : public Item
 {
 public:
-    Rect(Point topLeft, Point bottomRight);
+    Rect(double x1, double y1, double x2, double y2);
 
 
     // [[deprecated]] friend std::ostream& operator<<(std::ostream& out, const Rect& rect) {

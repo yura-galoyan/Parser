@@ -8,7 +8,7 @@
 class Circle : public Item
 {
 public:
-    Circle(Point center, double radius);
+    Circle(double x, double y, double radius);
 
     // [[deprecated]] friend std::ostream& operator<<(std::ostream& out, const Circle& rect) {
     //     out << "Center: " << rect.m_center.x << " " << rect.m_center.y 
