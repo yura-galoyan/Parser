@@ -5,6 +5,7 @@
 #include <string>
 #include <any>
 
+class iSerializer;
 struct Point{
     double x;
     double y;
@@ -17,6 +18,7 @@ public:
     enum class Type{Rect, Circle};
     Type getType(){ return m_type;  }
     Attributes& attributes() { return m_attributes; }
+    virtual void accept(iSerializer& serial) const = 0;
 
 protected:
     bool setType(Type t){ m_type = t; return true; }
