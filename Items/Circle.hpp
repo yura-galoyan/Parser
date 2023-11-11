@@ -16,7 +16,13 @@ public:
     //         << " | Radius:  " << rect.m_radius;
     //     return out;
     // }
+private:
+    Point m_center;
+    double m_radius;
+
 };
+
+
 
 
 #endif //CIRCLE_HPP

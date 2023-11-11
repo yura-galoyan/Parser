@@ -6,12 +6,11 @@
 class txtSerializer : public iSerializer
 {
 public:
-    virtual void visit(double& circle) ;
-    virtual void visit(Point& circle) ;
-    virtual void visit(Circle& circle) ;
-    virtual void visit(Rect& circle) ;
-    virtual void visit(Slide& circle) ;
-    virtual void visit(Document& circle) ;
+    virtual void visit(double& val) ;
+    virtual void visit(Point& val) ;
+    virtual void visit(Item& val) ;
+    virtual void visit(Slide& val) ;
+    virtual void visit(Document& val) ;
 
 };
 

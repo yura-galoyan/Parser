@@ -17,14 +17,12 @@ public:
     using Attributes = std::unordered_map<std::string,std::any>;
     enum class Type{Rect, Circle};
     Type getType(){ return m_type;  }
-    Attributes& attributes() { return m_attributes; }
     virtual void accept(iSerializer& serial) const = 0;
 
 protected:
     bool setType(Type t){ m_type = t; return true; }
 
 private:
-    Attributes m_attributes;
     Type m_type;
 };
 
