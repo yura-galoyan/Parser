@@ -49,10 +49,9 @@ void TxtDeserializer::visit(Slide& val)
 
 void TxtDeserializer::visit(std::vector<Slide>& slides)
 {
-    std::string tmp;
-    result >> tmp;
+    
     /*   "slide"   */
-    if(tmp == "slide");
+    if(m_lastToken == "slide");
     for(auto& slide : slides){
         slide.accept(*this);
     }

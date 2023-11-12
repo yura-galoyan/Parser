@@ -21,8 +21,11 @@ void Document::addSlide(Slide&& slide)
 
 void Document::accept(iSerializer &serial)
 {
+    // write another accept function, for deserialization, 
+    // where number of all slides and items is precalculated. 
     serial.visit(name);
-    serial.visit(m_slides);
+    Slide slide;
+    serial.visit(slide);
 }
 
 Slide &Document::getCurrSlide()
