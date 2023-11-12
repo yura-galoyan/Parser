@@ -7,6 +7,8 @@
 
 /// @brief TODO: improve as a c++ class
 
+class iSerializer;
+
 class Document
 {
 public:
@@ -17,7 +19,7 @@ public:
     void addSlide(Slide&& slide);
     void removeSlide(Slide slide);
     void removeSlide(int id);
-
+    void accept(iSerializer& serial);
 public:
     Slide& getCurrSlide();
     void displayContent() const;
@@ -25,6 +27,7 @@ public:
 
 
 private:
+    std::string name = "Document";
     std::vector<Slide> m_slides;
     int curr_slide_id;
 };

@@ -1,16 +1,20 @@
 #ifndef SERIALIZER_TXT_SERIALIZER_HPP
 #define SERIALIZER_TXT_SERIALIZER_HPP
 
-#include "iSerializer.hpp"
 
-class txtSerializer : public iSerializer
+#include "iSerializer.hpp"
+class TxtSerializer : public iSerializer
 {
 public:
-    virtual void visit(double& val) ;
-    virtual void visit(Point& val) ;
-    virtual void visit(Item& val) ;
-    virtual void visit(Slide& val) ;
-    virtual void visit(Document& val) ;
+    void visit(double& val) override ;
+    void visit(std::size_t& val) override;
+    void visit(Point& val) override ;
+    void visit(std::string&& val) override ;
+    void visit(std::string& val) override ;
+    void visit(Item& val) override ;
+    void visit(std::vector<Slide>& slides) override;
+    void visit(Slide& val) override ;
+    void visit(Document& val) override ;
 
 };
 

@@ -6,7 +6,9 @@ Circle::Circle(Point center, double radius)
 
 }
 
-void Circle::accept(iSerializer &visitor) const
+void Circle::accept(iSerializer &visitor)
 {
-    
+    visitor.visit(name);
+    visitor.visit(m_center);
+    visitor.visit(m_radius);
 }

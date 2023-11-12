@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.15)
 Project(PowerPoint)
 
 set(COMMAND_FACTORY_DIR CommandFactories)
-set(COMMAND_DIR Commands)
 set(ITEM_FACTORY_DIR ItemFactories)
+set(SERIALIZER_DIR Serializer)
+set(COMMAND_DIR Commands)
 set(ITEM_DIR Items)
 
 set (Sources main.cpp
@@ -11,12 +12,14 @@ set (Sources main.cpp
     ${COMMAND_DIR}/DisplayCommand.cpp
     ${COMMAND_DIR}/RemoveCommand.cpp
     ${COMMAND_DIR}/AddSlideCommand.cpp
+    ${COMMAND_DIR}/SaveCommand.cpp
     
     ${COMMAND_FACTORY_DIR}/AddCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/RemoveCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/DisplayCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/AddSlideCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/CommandFactoryRegistry.cpp
+    ${COMMAND_FACTORY_DIR}/SaveCommandFactory.cpp
 
     ${ITEM_FACTORY_DIR}/CircleFactory.cpp
     ${ITEM_FACTORY_DIR}/RectFactory.cpp
@@ -27,6 +30,8 @@ set (Sources main.cpp
     
     ${ITEM_DIR}/Document.cpp
     ${ITEM_DIR}/Slide.cpp 
+
+    ${SERIALIZER_DIR}/TxtSerializer.cpp
 
     Application.cpp
     CommandParser.cpp

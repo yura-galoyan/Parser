@@ -13,6 +13,7 @@ public:
     
 public:
     Tokens split(std::string input) const;
+    std::string getToken(std::string input, std::size_t n) const;
 };
 
 

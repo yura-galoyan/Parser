@@ -1,4 +1,4 @@
-#include "txtSerializer.hpp"
+#include "TxtSerializer.hpp"
 
 #include "../Items/Item.hpp"
 #include "../Items/Slide.hpp"
@@ -6,30 +6,53 @@
 #include "../Items/Document.hpp"
 
 
-void txtSerializer::visit(double& val)
+void TxtSerializer::visit(double& val)
 {
     result << val << " ";
 }
 
-void txtSerializer::visit(Point& val)
+void TxtSerializer::visit(std::size_t & val)
+{
+    result << val << " ";
+}
+
+void TxtSerializer::visit(Point& val)
 {
     result << val.x <<  " " << val.y << " ";
 }
 
-void txtSerializer::visit(Item& val)
+void TxtSerializer::visit(std::string&& val)
 {
+    result << val << " ";
+}
+
+void TxtSerializer::visit(std::string& val)
+{
+    result << val << " ";
+}
+
+void TxtSerializer::visit(Item& val)
+{
+    result << "\n";
     val.accept(*this);
 }
 
-
-void txtSerializer::visit(Slide& val)
+void TxtSerializer::visit(std::vector<Slide>& slides)
 {
-    /// TODO:
-    // val.accept(*this);
+    for(auto& slide : slides){
+        slide.accept(*this);
+    }
 }
 
-void txtSerializer::visit(Document& val)
+
+void TxtSerializer::visit(Slide& val)
 {
-    /// TODO:
-    // val.accept(*this);
+    result << "\n";
+    val.accept(*this);
+}
+
+void TxtSerializer::visit(Document& val)
+{
+    result << "\n";
+    val.accept(*this);
 }

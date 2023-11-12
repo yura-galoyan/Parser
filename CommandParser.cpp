@@ -4,6 +4,6 @@
 #include <regex>
 
 std::string CommandParser::parse(const std::string& input){
-    auto tokens = Tokenizer.split(input);
-    return tokens[0];
+    auto token = Tokenizer.getToken(input,1);
+    return token;
 }

@@ -1,4 +1,5 @@
 #include "Document.hpp"
+#include "../Serializer/iSerializer.hpp"
 
 Document::Document()
 {
@@ -18,7 +19,13 @@ void Document::addSlide(Slide&& slide)
     m_slides.push_back(std::move(slide));
 }
 
-Slide& Document::getCurrSlide() 
+void Document::accept(iSerializer &serial)
+{
+    serial.visit(name);
+    serial.visit(m_slides);
+}
+
+Slide &Document::getCurrSlide()
 {
     return m_slides[curr_slide_id];
 }

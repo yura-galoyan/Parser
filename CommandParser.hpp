@@ -9,7 +9,7 @@ class CommandParser
 {
 public:
     std::string parse(const std::string& string);
-
+    
 private:
     Tokenizer Tokenizer;
 };

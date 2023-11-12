@@ -13,6 +13,7 @@ public:
 
     Slide() = default;
     
+    /// TODO: implement
     Slide(const Slide& other){};
     //Slide& operator=(const Slide& other);
 //
@@ -21,6 +22,7 @@ public:
 
 public:
     void displayContent() const ;
+    void accept(iSerializer& serializer);
 
 public:
     auto begin() { return m_items.begin(); }
@@ -29,12 +31,18 @@ public:
     auto end() const { return m_items.cend(); }
     auto cbegin() { return m_items.cbegin(); }
     auto cend() { return m_items.cend(); }
-
+    
 public:
+    void setId(std::size_t id) { m_id = id; };
     void addItem(std::unique_ptr<Item> m_item );
     void removeItem(int id);
 
+public:
+    auto getId() { return m_id; }
+
 private:
+    std::size_t m_id;
+    std::string name{"slide"};
     std::list<std::unique_ptr<Item>> m_items;
 
 };

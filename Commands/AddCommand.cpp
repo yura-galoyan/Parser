@@ -16,7 +16,7 @@ void AddCommand::setItemType(Item::Type type){
     m_type = type;
 }
 
-void AddCommand::setActiveItem(std::unique_ptr<Item>&& item)
+void AddCommand::setActiveItem(std::unique_ptr<Item> item)
 {
-    activeItem = std::move(activeItem);
+    activeItem = std::move(item);
 }

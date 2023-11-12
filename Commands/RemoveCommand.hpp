@@ -8,7 +8,7 @@ class RemoveCommand : public Command
 {
 public:
     RemoveCommand(std::shared_ptr<Document> doc);
-    std::string exec();
+    std::string exec() override ;
     void setId(std::string id) { m_id = std::stoi(id); };
 
 private:
