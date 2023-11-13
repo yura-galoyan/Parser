@@ -12,6 +12,9 @@
 class Rect : public Item
 {
 public:
+    Rect() {
+        m_type = Item::Type::Rect;
+    };
     Rect(Point topLeft, Point bottomRight);
     void setTopLeft(Point pos){ m_TopLeft = pos; }
     void setBottomRight(Point pos){ m_BottomRight = pos; }
@@ -25,13 +28,10 @@ public:
         return out;
     }
 
-
-
+    std::unique_ptr<Item> clone() override { return std::make_unique<Rect>(*this); };
 private:
-    std::string name{"rect"};
     Point m_TopLeft;
     Point m_BottomRight;
-
 
 };
 

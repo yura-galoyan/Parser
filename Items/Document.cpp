@@ -7,15 +7,18 @@ Document::Document()
     curr_slide_id = 0;
 }
 
-void Document::addSlide(const Slide &slide)
+void Document::addSlide(const Slide& slide)
 {
+
     ++curr_slide_id;
+    ++m_numberOfSlides;
     m_slides.push_back(slide);
 }
 
 void Document::addSlide(Slide&& slide)
 {
     ++curr_slide_id;
+    ++m_numberOfSlides;
     m_slides.push_back(std::move(slide));
 }
 
@@ -24,8 +27,12 @@ void Document::accept(iSerializer &serial)
     // write another accept function, for deserialization, 
     // where number of all slides and items is precalculated. 
     serial.visit(name);
-    Slide slide;
-    serial.visit(slide);
+    serial.visit(m_numberOfSlides);
+    m_slides.resize(m_numberOfSlides);
+
+    for(auto& slide : m_slides){
+        slide.accept(serial);
+    }
 }
 
 Slide &Document::getCurrSlide()

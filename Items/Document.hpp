@@ -20,6 +20,7 @@ public:
     void removeSlide(Slide slide);
     void removeSlide(int id);
     void accept(iSerializer& serial);
+
 public:
     Slide& getCurrSlide();
     void displayContent() const;
@@ -27,8 +28,9 @@ public:
 
 
 private:
-    std::string name = "Document";
+    std::string name = "document";
     std::vector<Slide> m_slides;
+    std::size_t m_numberOfSlides{0};
     int curr_slide_id;
 };
 

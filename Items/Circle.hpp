@@ -8,6 +8,9 @@
 class Circle : public Item
 {
 public:
+    Circle() {
+        m_type = Item::Type::Circle;
+    };
     Circle(Point center, double radius);
     void accept(iSerializer& visitor) override;
 
@@ -17,8 +20,8 @@ public:
     //     return out;
     // }
     
+    std::unique_ptr<Item> clone() override { return std::make_unique<Circle>(*this); };
 private:
-    std::string name{"Circle"};
     Point m_center;
     double m_radius;
 

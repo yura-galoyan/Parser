@@ -9,10 +9,10 @@ std::unique_ptr<Command> LoadCommandFactory::createCommand(const std::string &in
     /// TODO:
     //  take path from input
 
-    std::stringstream stream(R"(document
-slide
-rect 1 2 3 4
-circle 1 2 5)");
+    std::stringstream stream(R"(document 1
+slide 0 2
+100 1 2 3 4
+200 1 2 5)");
 
 
     auto cmd = std::make_unique<LoadCommand>(m_doc,std::make_unique<TxtDeserializer>(), std::move(stream) );

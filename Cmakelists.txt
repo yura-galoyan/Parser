@@ -13,6 +13,7 @@ set (Sources main.cpp
     ${COMMAND_DIR}/RemoveCommand.cpp
     ${COMMAND_DIR}/AddSlideCommand.cpp
     ${COMMAND_DIR}/SaveCommand.cpp
+    ${COMMAND_DIR}/LoadCommand.cpp
     
     ${COMMAND_FACTORY_DIR}/AddCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/RemoveCommandFactory.cpp
@@ -20,6 +21,7 @@ set (Sources main.cpp
     ${COMMAND_FACTORY_DIR}/AddSlideCommandFactory.cpp
     ${COMMAND_FACTORY_DIR}/CommandFactoryRegistry.cpp
     ${COMMAND_FACTORY_DIR}/SaveCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/LoadCommandFactory.cpp
 
     ${ITEM_FACTORY_DIR}/CircleFactory.cpp
     ${ITEM_FACTORY_DIR}/RectFactory.cpp
@@ -32,6 +34,7 @@ set (Sources main.cpp
     ${ITEM_DIR}/Slide.cpp 
 
     ${SERIALIZER_DIR}/TxtSerializer.cpp
+    ${SERIALIZER_DIR}/TxtDeserializer.cpp
 
     Application.cpp
     CommandParser.cpp

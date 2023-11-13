@@ -11,10 +11,10 @@ class Slide
 {
 public:
 
-    Slide() = default;
-    
+    Slide();
+    Slide(std::size_t id) { m_id = id; }
     /// TODO: implement
-    Slide(const Slide& other){};
+    Slide(const Slide& other);
     //Slide& operator=(const Slide& other);
 //
     //Slide(Slide&& other);
@@ -42,9 +42,14 @@ public:
 
 private:
     std::size_t m_id;
+    std::size_t m_numberOfItems{0};
     std::string name{"slide"};
     std::list<std::unique_ptr<Item>> m_items;
 
+    auto& count() { return s_count; }
+
+private:
+    inline static std::size_t s_count{0};
 };
 
 

@@ -11,7 +11,8 @@ public:
     void visit(Point& val) override ;
     void visit(std::string&& val) override ;
     void visit(std::string& val) override ;
-    void visit(Item& val) override ;
+    void visit(Item::Type& type) override;
+    void visit(std::unique_ptr<Item>& val) override ;
     void visit(std::vector<Slide>& slides) override;
     void visit(Slide& val) override ;
     void visit(Document& val) override ;

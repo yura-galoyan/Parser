@@ -28,13 +28,18 @@ void TxtSerializer::visit(std::string&& val)
 
 void TxtSerializer::visit(std::string& val)
 {
-    result << val << " ";
+    result << "\n" << val << " ";
 }
 
-void TxtSerializer::visit(Item& val)
+void TxtSerializer::visit(Item::Type &type)
+{
+    result << static_cast<std::size_t>(type) << " ";
+}
+
+void TxtSerializer::visit(std::unique_ptr<Item>& val)
 {
     result << "\n";
-    val.accept(*this);
+    val->accept(*this);
 }
 
 void TxtSerializer::visit(std::vector<Slide>& slides)
