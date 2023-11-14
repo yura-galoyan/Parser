@@ -11,6 +11,8 @@ LoadCommand::LoadCommand(std::shared_ptr<Document> doc, std::unique_ptr<iSeriali
 
 std::string LoadCommand::exec()
 {
+    
     m_serializer->visit(*m_doc);
+
     return "";
 }

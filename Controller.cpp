@@ -13,9 +13,9 @@ void Controller::run()
     //add -type circle -x1 1 -y1 2 -r 5
     (R"(load
     save
-    display
     addslide
-    display)");
+    add -type rect -x1 1 -y1 2 -x2 3 -y2 4
+    save)");
 
     int i = 5;
     while(i--){

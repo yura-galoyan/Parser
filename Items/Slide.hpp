@@ -6,19 +6,16 @@
 #include <memory>
 
 #include "Item.hpp"
-/// @brief TODO: improve ase a c++ class
+
 class Slide
 {
 public:
 
     Slide();
     Slide(std::size_t id) { m_id = id; }
-    /// TODO: implement
     Slide(const Slide& other);
-    //Slide& operator=(const Slide& other);
-//
-    //Slide(Slide&& other);
-    //Slide& operator=(Slide&& other);
+    Slide& operator=(Slide other);
+    Slide(Slide&& other);
 
 public:
     void displayContent() const ;
@@ -32,6 +29,9 @@ public:
     auto cbegin() { return m_items.cbegin(); }
     auto cend() { return m_items.cend(); }
     
+public:
+    void swap(Slide& other) noexcept ;
+
 public:
     void setId(std::size_t id) { m_id = id; };
     void addItem(std::unique_ptr<Item> m_item );
