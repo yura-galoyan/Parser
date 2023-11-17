@@ -6,7 +6,7 @@
 
 class InputOutputSystem{
 public:
-    static std::string getInput(std::istream& in = std::cin);
+    static std::string getInput();
     template<typename...Args>
     static void output(std::ostream& out, const Args&... args);
 };

@@ -19,6 +19,7 @@ void Controller::run()
 
     int i = 5;
     while(i--){
+        
         std::string input = IOS::getInput(s);
         auto commandName = m_parser.parse(input);
         auto command = m_CommandFactoryRegistry[commandName]->createCommand(input);
