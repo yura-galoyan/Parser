@@ -5,9 +5,7 @@
 #include "../Items/Circle.hpp"
 #include "../Items/Slide.hpp"
 #include "../Items/Rect.hpp"
-
 #include "../Items/Item.hpp"
-
 
 void TxtDeserializer::visit(Document &val)
 {
@@ -81,8 +79,6 @@ void TxtDeserializer::visit(Slide& val)
 void TxtDeserializer::visit(std::vector<Slide>& slides)
 {
     
-    /*   "slide"   */
-    if(m_lastToken == "slide");
     for(auto& slide : slides){
         slide.accept(*this);
     }

@@ -15,7 +15,29 @@ Slide::Slide(const Slide& other)
     for(auto& item : other.m_items){
         m_items.push_back(item->clone());
     }
+}
 
+Slide& Slide::operator=(Slide other)
+{
+    swap(other);
+    return *this;
+}
+
+void Slide::swap(Slide& other) noexcept {
+    using std::swap;
+    
+    swap(m_id,other.m_id);
+    swap(m_numberOfItems,other.m_numberOfItems);
+    swap(name,other.name);
+    swap(m_items, other.m_items);
+}
+
+Slide::Slide(Slide &&other)
+{
+    m_id = other.m_id;
+    m_numberOfItems = other.m_numberOfItems;
+    name = other.name;
+    m_items = std::move(other.m_items);
 }
 
 void Slide::displayContent() const
