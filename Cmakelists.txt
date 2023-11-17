@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
 Project(PowerPoint)
 
-set(COMMAND_FACTORY_DIR CommandFactories)
-set(ITEM_FACTORY_DIR ItemFactories)
-set(SERIALIZER_DIR Serializer)
-set(COMMAND_DIR Commands)
-set(ITEM_DIR Items)
+set(COMMAND_FACTORY_DIR Sources/CommandFactories)
+set(ITEM_FACTORY_DIR Sources/ItemFactories)
+set(SERIALIZER_DIR Sources/Serializer)
+set(COMMAND_DIR Sources/Commands)
+set(ITEM_DIR Sources/Items)
 
 set (Sources main.cpp
     ${COMMAND_DIR}/AddCommand.cpp
