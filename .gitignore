@@ -14,4 +14,5 @@ photo_2023-09-27_11-42-49.jpg
 *.exe
 build/
 notes.md
-project.pro.user
+parser.pro.user
+QtBuild
