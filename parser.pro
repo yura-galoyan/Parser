@@ -8,10 +8,12 @@ SOURCES += Sources/main.cpp \
            Sources/View/Canvas/Canvas.cpp \
            Sources/View/MenuBar/FileMenu.cpp \
            Sources/View/MenuBar/OptionsMenu.cpp \
-           Sources/View/ToolBar/ToolBar.cpp
+           Sources/View/ToolBar/ToolBar.cpp \
+           Sources/View/CommandPanel/CommandPanel.cpp
 
 HEADERS += Sources/MainWindow.hpp \
            Sources/View/Canvas/Canvas.hpp \
            Sources/View/MenuBar/FileMenu.hpp \
            Sources/View/MenuBar/OptionsMenu.hpp \
-           Sources/View/ToolBar/ToolBar.hpp
+           Sources/View/ToolBar/ToolBar.hpp \
+           Sources/View/CommandPanel/CommandPanel.hpp \

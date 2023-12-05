@@ -3,5 +3,5 @@
 Canvas::Canvas(QWidget *parent)
     : QWidget(parent)
 {
-   setMinimumSize(720,480); 
+   setMinimumSize(640,400);
 }

@@ -9,7 +9,7 @@
 
 #include "View/MenuBar/OptionsMenu.hpp"
 #include "View/MenuBar/FileMenu.hpp"
-
+#include "View/CommandPanel/CommandPanel.hpp"
 #include "View/ToolBar/ToolBar.hpp"
 
 
@@ -29,7 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     addToolBar(toolBar);
     
     auto canvas = new Canvas;
+    auto commandPanel = new CommandPanel(this);
+
 
     centralWidget()->layout()->addWidget(canvas);
-
+    centralWidget()->layout()->addWidget(commandPanel);
 }
