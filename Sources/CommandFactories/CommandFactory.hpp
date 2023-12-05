@@ -2,7 +2,7 @@
 #define FACTORY_HPP
 
 #include "../Commands/Command.hpp"
-#include "../Tokenizer.hpp"
+#include "../ParsingUtils/Tokenizer.hpp"
 #include <memory>
 
 class CommandFactory

@@ -9,7 +9,7 @@ std::unique_ptr<Command> LoadCommandFactory::createCommand(const std::string &in
     /// TODO:
     //  take path from input
 
-    std::stringstream stream(R"(document 1
+    std::stringstream stream(R"(document 2
 slide 0 2
 100 1 2 3 4
 200 1 2 5

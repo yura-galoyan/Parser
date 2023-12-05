@@ -15,7 +15,7 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : QMainWindow(parent), m_pDocument{std::make_shared<Document>()}
 {
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(new QVBoxLayout);
@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     addToolBar(toolBar);
     
     auto canvas = new Canvas;
-    auto commandPanel = new CommandPanel(this);
+    auto commandPanel = new CommandPanel(m_pDocument,this);
 
 
     centralWidget()->layout()->addWidget(canvas);

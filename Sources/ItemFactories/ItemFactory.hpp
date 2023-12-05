@@ -1,7 +1,7 @@
 #ifndef ITEM_FACTORY_HPP
 #define ITEM_FACTORY_HPP
 
-#include "../Tokenizer.hpp"
+#include "../ParsingUtils/Tokenizer.hpp"
 #include "../Items/Item.hpp"
 
 #include <string>
