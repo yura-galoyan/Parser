@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "Items/Document.hpp"
+#include "View/SlidesTab/SlidesTab.hpp"
 
 class MainWindow : public QMainWindow
 {
@@ -15,6 +16,9 @@ public:
 // will be changed
 private:
     std::shared_ptr<Document> m_pDocument;
+    SlidesTab* m_pSlidesTab;
+
+
 };
 
 

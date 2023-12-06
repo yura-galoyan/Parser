@@ -9,6 +9,7 @@ Circle::Circle(Point center, double radius)
 void Circle::accept(iSerializer &visitor)
 {
     visitor.visit(m_type);
+    Item::accept(visitor);
     visitor.visit(m_center);
     visitor.visit(m_radius);
 }

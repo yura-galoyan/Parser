@@ -13,8 +13,8 @@ public:
 
 private:
     std::unique_ptr<iSerializer> m_serializer;
-    std::shared_ptr<Document> m_doc;
     std::stringstream m_input;
+    std::shared_ptr<Document> m_doc;
 
 };
 

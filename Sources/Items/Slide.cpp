@@ -1,6 +1,7 @@
 #include "../Serializer/iSerializer.hpp"
 #include "Slide.hpp"
 #include <iostream>
+#include <algorithm>
 
 Slide::Slide()
 {
@@ -68,6 +69,14 @@ void Slide::addItem(std::unique_ptr<Item> item)
 }
 
 void Slide::removeItem(int id){
-    m_items.erase(std::next(m_items.begin(),id));
-    --m_numberOfItems;
+
+    auto itemIteratorToErase = std::remove_if(m_items.begin(),m_items.end(), [id](const auto& item){
+        return item->getId() == id;
+    }   );
+
+    if(itemIteratorToErase !=  m_items.end()){
+        m_items.erase(itemIteratorToErase);
+        --m_numberOfItems;
+    }
+
 }
