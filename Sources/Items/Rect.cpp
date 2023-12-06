@@ -10,6 +10,7 @@ Rect::Rect(Point topLeft, Point bottomRight)
 void Rect::accept(iSerializer &visitor)
 {
     visitor.visit(m_type);
+    Item::accept(visitor);
     visitor.visit(m_TopLeft);
     visitor.visit(m_BottomRight);
 }

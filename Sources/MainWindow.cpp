@@ -1,6 +1,7 @@
 #include "MainWindow.hpp"
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QMenuBar>
 
 
@@ -18,20 +19,35 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), m_pDocument{std::make_shared<Document>()}
 {
     setCentralWidget(new QWidget);
-    centralWidget()->setLayout(new QVBoxLayout);
 
+    auto qvbox = new QVBoxLayout;
+    auto qhbox = new QHBoxLayout;
 
-    setMenuBar(new QMenuBar);
-    menuBar()->addMenu(new FileMenu);
-    menuBar()->addMenu(new OptionsMenu);
-    
     auto toolBar = new ToolBar;
-    addToolBar(toolBar);
-    
+
+    m_pSlidesTab = new SlidesTab;
+
+    auto pMenuBar = new QMenuBar;
+    auto pFileMenu = new FileMenu;
+    auto pOptionsMenu = new OptionsMenu;
+
     auto canvas = new Canvas;
     auto commandPanel = new CommandPanel(m_pDocument,this);
 
+    m_pSlidesTab->setMinimumWidth(100);
 
-    centralWidget()->layout()->addWidget(canvas);
-    centralWidget()->layout()->addWidget(commandPanel);
+    pMenuBar->addMenu(pFileMenu);
+    pMenuBar->addMenu(pOptionsMenu);
+    setMenuBar(pMenuBar);
+
+    addToolBar(toolBar);
+
+    centralWidget()->setLayout(qvbox);
+
+    qhbox->addWidget(m_pSlidesTab);
+    qhbox->addWidget(canvas);
+
+    qvbox->addLayout(qhbox);
+    qvbox->addWidget(commandPanel);
+    
 }

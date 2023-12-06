@@ -1,7 +1,21 @@
+#include <QGraphicsItem>
+#include <QVBoxLayout>
+#include <QSlider>
+#include <QLabel>
+
 #include "Canvas.hpp"
 
-Canvas::Canvas(QWidget *parent)
+Canvas::Canvas( QWidget *parent)
     : QWidget(parent)
 {
-   setMinimumSize(640,400);
+    scene = new QGraphicsScene(QRectF(0, 0, 1080, 640));
+    view = new CanvasGraphicsView(scene);
+
+    QVBoxLayout *box = new QVBoxLayout;
+    QHBoxLayout *hbx = new QHBoxLayout;
+
+    box->addWidget(view);
+    box->addLayout(hbx);
+
+    setLayout(box);
 }
