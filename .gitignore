@@ -3,9 +3,16 @@ CMakeCache.txt
 CMakeFiles
 CMakeScripts
 Testing
-Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+photo_2023-09-27_11-42-49.jpg
+.vscode/
+.vscode
+*.exe
+build/
+notes.md
+parser.pro.user
+QtBuild

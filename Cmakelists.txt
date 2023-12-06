@@ -1,0 +1,46 @@
+cmake_minimum_required(VERSION 3.15)
+Project(PowerPoint)
+
+set(COMMAND_FACTORY_DIR Sources/CommandFactories)
+set(ITEM_FACTORY_DIR Sources/ItemFactories)
+set(SERIALIZER_DIR Sources/Serializer)
+set(COMMAND_DIR Sources/Commands)
+set(ITEM_DIR Sources/Items)
+
+set (Sources main.cpp
+    ${COMMAND_DIR}/AddCommand.cpp
+    ${COMMAND_DIR}/DisplayCommand.cpp
+    ${COMMAND_DIR}/RemoveCommand.cpp
+    ${COMMAND_DIR}/AddSlideCommand.cpp
+    ${COMMAND_DIR}/SaveCommand.cpp
+    ${COMMAND_DIR}/LoadCommand.cpp
+    
+    ${COMMAND_FACTORY_DIR}/AddCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/RemoveCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/DisplayCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/AddSlideCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/CommandFactoryRegistry.cpp
+    ${COMMAND_FACTORY_DIR}/SaveCommandFactory.cpp
+    ${COMMAND_FACTORY_DIR}/LoadCommandFactory.cpp
+
+    ${ITEM_FACTORY_DIR}/CircleFactory.cpp
+    ${ITEM_FACTORY_DIR}/RectFactory.cpp
+    ${ITEM_FACTORY_DIR}/ItemFactoryRegistry.cpp
+
+    ${ITEM_DIR}/Circle.cpp
+    ${ITEM_DIR}/Rect.cpp
+    
+    ${ITEM_DIR}/Document.cpp
+    ${ITEM_DIR}/Slide.cpp 
+
+    ${SERIALIZER_DIR}/TxtSerializer.cpp
+    ${SERIALIZER_DIR}/TxtDeserializer.cpp
+
+    Application.cpp
+    CommandParser.cpp
+    Controller.cpp
+    InputOutputSystem.cpp
+    Tokenizer.cpp
+)
+ 
+add_executable(PowerPoint ${Sources} )
