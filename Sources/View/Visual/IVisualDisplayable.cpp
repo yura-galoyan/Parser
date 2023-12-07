@@ -1,14 +1,15 @@
-#include "VisualDisplayable.hpp"
+#include "IVisualDisplayable.hpp"
 
 #include <QPen>
 #include <QPainter>
-#include "../../Items/Rect.hpp"
-#include "../../Items/Circle.hpp"
+#include "../../Logic/Items/Rect.hpp"
+#include "../../Logic/Items/Circle.hpp"
 
-void VisualDisplayable::draw(QPaintDevice& image, Item* item)
+void IVisualDisplayable::draw(QPaintDevice& image, Item* item)
 {
 
     QPen pen;
+    pen.setWidth(2);
     pen.setColor(Qt::red);
     pen.setBrush(QBrush(Qt::red));
     
@@ -17,19 +18,21 @@ void VisualDisplayable::draw(QPaintDevice& image, Item* item)
     painter.setPen(pen);
 
 
+
     switch (item->type())
     {
     case Item::Type::Rect:
     {
-
         std::cout << "call some rect drawing function" << std::endl;
         auto drawableRect = dynamic_cast<Rect*>(item)->getDrawableInfo();
+
+        std::cout << drawableRect.left() << drawableRect.top() << drawableRect.right() << drawableRect.bottom() << std::endl; 
+
         painter.drawRect(drawableRect);
     }
         break;
     case Item::Type::Circle:
     {
-
         std::cout << "call some rect drawing function" << std::endl;
         auto drawableCenterRadius = dynamic_cast<Circle*>(item)->getDrawableInfo();
         painter.drawEllipse(drawableCenterRadius.first, drawableCenterRadius.second, drawableCenterRadius.second);
@@ -46,4 +49,7 @@ void VisualDisplayable::draw(QPaintDevice& image, Item* item)
     default:
         break;
     }
+
+    painter.end();
+
 }

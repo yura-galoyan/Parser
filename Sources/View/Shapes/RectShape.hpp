@@ -2,15 +2,15 @@
 #define RECT_SHAPE_HPP
 
 #include "iShape.hpp"
-#include "../Visual/VisualDisplayable.hpp"
+#include "../Visual/IVisualDisplayable.hpp"
 
 
-class RectShape : public iShape, public VisualDisplayable
+class RectShape : public iShape, public IVisualDisplayable
 {
 public:
     RectShape() : iShape(Item::Type::Rect) {}
     void draw(QPaintDevice& image ) override {
-        VisualDisplayable::draw(image, m_item);
+        IVisualDisplayable::draw(image, m_item);
     }
     
     std::unique_ptr<iShape> clone() override { 

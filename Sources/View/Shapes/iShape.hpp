@@ -1,7 +1,7 @@
 #ifndef I_SHAPE_HPP
 #define I_SHAPE_HPP
 
-#include "../../Items/Item.hpp"
+#include "../../Logic/Items/Item.hpp"
 #include <QImage>
 
 class iShape

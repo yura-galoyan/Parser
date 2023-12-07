@@ -5,7 +5,7 @@
 #include <memory>
 #include "iShape.hpp"
 
-#include "../../Items/Item.hpp"
+#include "../../Logic/Items/Item.hpp"
 
 #include "RectShape.hpp"
 #include "CircleShape.hpp"

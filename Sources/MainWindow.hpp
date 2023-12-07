@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "Items/Document.hpp"
+#include "Logic/Items/Document.hpp"
 #include "View/SlidesTab/SlidesTab.hpp"
 
 class MainWindow : public QMainWindow

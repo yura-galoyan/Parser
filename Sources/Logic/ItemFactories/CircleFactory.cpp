@@ -2,7 +2,6 @@
 #include "../Items/Circle.hpp"
 
 #include <iostream>
-#include "../Utils/AnyHelper.hpp"
 
 
 std::unique_ptr<Item> CircleFactory::createItem(const Tokenizer::Tokens &input) const

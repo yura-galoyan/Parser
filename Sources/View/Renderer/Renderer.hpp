@@ -1,7 +1,7 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "../../Items/Slide.hpp"
+#include "../../Logic/Items/Slide.hpp"
 #include "../Shapes/ShapeLibrary.hpp"
 
 #include <QImage>

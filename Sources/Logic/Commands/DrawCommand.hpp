@@ -2,7 +2,7 @@
 #define DRAW_COMMAND_HPP
 
 #include "../Items/Document.hpp"
-#include "../View/Renderer/Renderer.hpp"
+#include "../../View/Renderer/Renderer.hpp"
 #include "Command.hpp"
 
 class DrawCommand : public Command

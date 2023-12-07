@@ -35,7 +35,7 @@ public:
 public:
     void setId(std::size_t id) { m_id = id; };
     void addItem(std::unique_ptr<Item> m_item );
-    void removeItem(int id);
+    bool removeItem(int id);
 
 public:
     auto getId() { return m_id; }

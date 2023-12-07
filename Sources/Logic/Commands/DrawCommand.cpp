@@ -9,7 +9,7 @@ DrawCommand::DrawCommand(std::shared_ptr<Document>& doc, int id, std::string fil
 std::string DrawCommand::exec()
 {
     const auto& slide = m_doc->getSlide(m_id);
-    QImage image(QSize{1080,1080}, QImage::Format::Format_ARGB32_Premultiplied);
+    QImage image(QSize{1080,1080}, QImage::Format::Format_RGB32);
     m_renderer.draw(slide,image);
     image.save(m_filePath.c_str());
 
