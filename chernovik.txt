@@ -1,6 +1,6 @@
     std::stringstream s
     //(R"(add -type rect -x1 1 -y1 2 -x2 3 -y2 4
-    //add -type circle -x1 1 -y1 2 -r 5
+    //
     (R"(load
     save
     addslide

@@ -3,10 +3,10 @@
 
 #include <QGraphicsEllipseItem>
 
-class CircleRect: public QGraphicsRectItem
+class GraphicsCircle: public QGraphicsRectItem
 {
 public:
-    CircleRect( QGraphicsItem* parent = nullptr);
+    GraphicsCircle( QGraphicsItem* parent = nullptr);
     
 };
 

@@ -9,5 +9,4 @@ public:
     GraphicRect(QGraphicsItem* parent = nullptr);
 };
 
-
 #endif //GRAPHICS_ITEM_RECT_HPP

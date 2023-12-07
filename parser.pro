@@ -12,6 +12,9 @@ SOURCES += Sources/main.cpp \
            Sources/View/ToolBar/ToolBar.cpp \
            Sources/View/CommandPanel/CommandPanel.cpp \
            Sources/View/SlidesTab/SlidesTab.cpp \
+           Sources/View/GraphicItems/GraphicRect.cpp \
+           Sources/View/GraphicItems/GraphicsCircle.cpp \
+           Sources/View/Visual/VisualDisplayable.cpp \
            Sources/CommandExecuter/CommandExecuter.cpp \
            Sources/Serializer/TxtDeserializer.cpp \ 
            Sources/Serializer/TxtSerializer.cpp \ 
@@ -32,6 +35,7 @@ SOURCES += Sources/main.cpp \
            Sources/Commands/LoadCommand.cpp \
            Sources/Commands/RemoveCommand.cpp \
            Sources/Commands/SaveCommand.cpp \
+           Sources/Commands/DrawCommand.cpp \
            Sources/CommandFactories/AddCommandFactory.cpp \
            Sources/CommandFactories/AddSlideCommandFactory.cpp \
            Sources/CommandFactories/CommandFactoryRegistry.cpp \
@@ -39,6 +43,7 @@ SOURCES += Sources/main.cpp \
            Sources/CommandFactories/LoadCommandFactory.cpp \
            Sources/CommandFactories/RemoveCommandFactory.cpp \
            Sources/CommandFactories/SaveCommandFactory.cpp \
+           Sources/CommandFactories/DrawCommandFactory.cpp
 
 HEADERS += Sources/MainWindow.hpp \
            Sources/View/Canvas/Canvas.hpp \
@@ -48,6 +53,9 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/View/ToolBar/ToolBar.hpp \
            Sources/View/CommandPanel/CommandPanel.hpp \
            Sources/View/SlidesTab/SlidesTab.hpp \
+           Sources/View/GraphicItems/GraphicRect.hpp \
+           Sources/View/GraphicItems/GraphicsCircle.hpp \
+           Sources/View/Visual/VisualDisplayable.hpp \
            Sources/CommandExecuter/CommandExecuter.hpp \
            Sources/Serializer/TxtDeserializer.hpp \ 
            Sources/Serializer/TxtSerializer.hpp \ 
@@ -68,6 +76,7 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/Commands/LoadCommand.hpp \
            Sources/Commands/RemoveCommand.hpp \
            Sources/Commands/SaveCommand.hpp \
+           Sources/Commands/DrawCommand.hpp \
            Sources/CommandFactories/AddCommandFactory.hpp \
            Sources/CommandFactories/AddSlideCommandFactory.hpp \
            Sources/CommandFactories/CommandFactoryRegistry.hpp \
@@ -75,3 +84,4 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/CommandFactories/LoadCommandFactory.hpp \
            Sources/CommandFactories/RemoveCommandFactory.hpp \
            Sources/CommandFactories/SaveCommandFactory.hpp \
+           Sources/CommandFactories/DrawCommandFactory.hpp
