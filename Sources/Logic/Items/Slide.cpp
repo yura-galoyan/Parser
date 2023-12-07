@@ -68,7 +68,7 @@ void Slide::addItem(std::unique_ptr<Item> item)
     ++m_numberOfItems;
 }
 
-void Slide::removeItem(int id){
+bool Slide::removeItem(int id){
 
     auto itemIteratorToErase = std::remove_if(m_items.begin(),m_items.end(), [id](const auto& item){
         return item->getId() == id;
@@ -77,6 +77,8 @@ void Slide::removeItem(int id){
     if(itemIteratorToErase !=  m_items.end()){
         m_items.erase(itemIteratorToErase);
         --m_numberOfItems;
+        return true;
     }
+    return false;
 
 }

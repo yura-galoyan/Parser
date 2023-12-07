@@ -3,8 +3,8 @@
 
 #include <QWidget>
 
-#include "../../Items/Document.hpp"
-#include "../../CommandExecuter/CommandExecuter.hpp"
+#include "../../Logic/Items/Document.hpp"
+#include "../../Logic/CommandExecuter/CommandExecuter.hpp"
 
 
 class QTextEdit;

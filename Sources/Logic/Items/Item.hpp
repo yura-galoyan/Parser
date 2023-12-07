@@ -7,12 +7,14 @@
 #include <string>
 #include <any>
 
-
+//
+#include <QPointF>
 
 class iSerializer;
 struct Point{
     double x;
     double y;
+    operator QPointF() { return QPointF(x,y);}
 };
 
 class Item
@@ -22,7 +24,7 @@ public:
         m_id = getNextId();
     };
     enum class Type : std::size_t{
-        Rect = 100,Circle = 200
+        Rect = 100, Circle = 200, Text = 300
     }; 
     using Attributes = std::unordered_map<std::string,std::any>;
     

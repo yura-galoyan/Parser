@@ -23,6 +23,7 @@ public:
 
 public:
     Slide& getCurrSlide();
+    auto& getSlide(int id) { return m_slides[id];  }
     void displayContent() const;
     void displaySlideContent(int id) const;
 

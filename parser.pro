@@ -12,33 +12,38 @@ SOURCES += Sources/main.cpp \
            Sources/View/ToolBar/ToolBar.cpp \
            Sources/View/CommandPanel/CommandPanel.cpp \
            Sources/View/SlidesTab/SlidesTab.cpp \
-           Sources/CommandExecuter/CommandExecuter.cpp \
-           Sources/Serializer/TxtDeserializer.cpp \ 
-           Sources/Serializer/TxtSerializer.cpp \ 
-           Sources/ParsingUtils/CommandParser.cpp \
-           Sources/ParsingUtils/Tokenizer.cpp \
-           Sources/Items/Item.cpp \
-           Sources/Items/Circle.cpp \
-           Sources/Items/Document.cpp \
-           Sources/Items/Rect.cpp \
-           Sources/Items/Slide.cpp \
-           Sources/ItemFactories/CircleFactory.cpp \
-           Sources/ItemFactories/ItemFactoryRegistry.cpp \
-           Sources/ItemFactories/RectFactory.cpp \
+           Sources/View/GraphicItems/GraphicRect.cpp \
+           Sources/View/GraphicItems/GraphicsCircle.cpp \
+           Sources/View/Visual/IVisualDisplayable.cpp \
            Sources/InputOutput/InputOutputSystem.cpp \
-           Sources/Commands/AddCommand.cpp \
-           Sources/Commands/AddSlideCommand.cpp \
-           Sources/Commands/DisplayCommand.cpp \
-           Sources/Commands/LoadCommand.cpp \
-           Sources/Commands/RemoveCommand.cpp \
-           Sources/Commands/SaveCommand.cpp \
-           Sources/CommandFactories/AddCommandFactory.cpp \
-           Sources/CommandFactories/AddSlideCommandFactory.cpp \
-           Sources/CommandFactories/CommandFactoryRegistry.cpp \
-           Sources/CommandFactories/DisplayCommandFactory.cpp \
-           Sources/CommandFactories/LoadCommandFactory.cpp \
-           Sources/CommandFactories/RemoveCommandFactory.cpp \
-           Sources/CommandFactories/SaveCommandFactory.cpp \
+           Sources/Logic/CommandExecuter/CommandExecuter.cpp \
+           Sources/Logic/Serializer/TxtDeserializer.cpp \ 
+           Sources/Logic/Serializer/TxtSerializer.cpp \ 
+           Sources/Logic/ParsingUtils/CommandParser.cpp \
+           Sources/Logic/ParsingUtils/Tokenizer.cpp \
+           Sources/Logic/Items/Item.cpp \
+           Sources/Logic/Items/Circle.cpp \
+           Sources/Logic/Items/Document.cpp \
+           Sources/Logic/Items/Rect.cpp \
+           Sources/Logic/Items/Slide.cpp \
+           Sources/Logic/ItemFactories/CircleFactory.cpp \
+           Sources/Logic/ItemFactories/ItemFactoryRegistry.cpp \
+           Sources/Logic/ItemFactories/RectFactory.cpp \
+           Sources/Logic/Commands/AddCommand.cpp \
+           Sources/Logic/Commands/AddSlideCommand.cpp \
+           Sources/Logic/Commands/DisplayCommand.cpp \
+           Sources/Logic/Commands/LoadCommand.cpp \
+           Sources/Logic/Commands/RemoveCommand.cpp \
+           Sources/Logic/Commands/SaveCommand.cpp \
+           Sources/Logic/Commands/DrawCommand.cpp \
+           Sources/Logic/CommandFactories/AddCommandFactory.cpp \
+           Sources/Logic/CommandFactories/AddSlideCommandFactory.cpp \
+           Sources/Logic/CommandFactories/CommandFactoryRegistry.cpp \
+           Sources/Logic/CommandFactories/DisplayCommandFactory.cpp \
+           Sources/Logic/CommandFactories/LoadCommandFactory.cpp \
+           Sources/Logic/CommandFactories/RemoveCommandFactory.cpp \
+           Sources/Logic/CommandFactories/SaveCommandFactory.cpp \
+           Sources/Logic/CommandFactories/DrawCommandFactory.cpp
 
 HEADERS += Sources/MainWindow.hpp \
            Sources/View/Canvas/Canvas.hpp \
@@ -48,30 +53,35 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/View/ToolBar/ToolBar.hpp \
            Sources/View/CommandPanel/CommandPanel.hpp \
            Sources/View/SlidesTab/SlidesTab.hpp \
-           Sources/CommandExecuter/CommandExecuter.hpp \
-           Sources/Serializer/TxtDeserializer.hpp \ 
-           Sources/Serializer/TxtSerializer.hpp \ 
-           Sources/ParsingUtils/CommandParser.hpp \
-           Sources/ParsingUtils/Tokenizer.hpp \
-           Sources/Items/Item.hpp \
-           Sources/Items/Circle.hpp \
-           Sources/Items/Document.hpp \
-           Sources/Items/Rect.hpp \
-           Sources/Items/Slide.hpp \
-           Sources/ItemFactories/CircleFactory.hpp \
-           Sources/ItemFactories/ItemFactoryRegistry.hpp \
-           Sources/ItemFactories/RectFactory.hpp \
+           Sources/View/GraphicItems/GraphicRect.hpp \
+           Sources/View/GraphicItems/GraphicsCircle.hpp \
+           Sources/View/Visual/IVisualDisplayable.hpp \
            Sources/InputOutput/InputOutputSystem.hpp \
-           Sources/Commands/AddCommand.hpp \
-           Sources/Commands/AddSlideCommand.hpp \
-           Sources/Commands/DisplayCommand.hpp \
-           Sources/Commands/LoadCommand.hpp \
-           Sources/Commands/RemoveCommand.hpp \
-           Sources/Commands/SaveCommand.hpp \
-           Sources/CommandFactories/AddCommandFactory.hpp \
-           Sources/CommandFactories/AddSlideCommandFactory.hpp \
-           Sources/CommandFactories/CommandFactoryRegistry.hpp \
-           Sources/CommandFactories/DisplayCommandFactory.hpp \
-           Sources/CommandFactories/LoadCommandFactory.hpp \
-           Sources/CommandFactories/RemoveCommandFactory.hpp \
-           Sources/CommandFactories/SaveCommandFactory.hpp \
+           Sources/Logic/CommandExecuter/CommandExecuter.hpp \
+           Sources/Logic/Serializer/TxtDeserializer.hpp \ 
+           Sources/Logic/Serializer/TxtSerializer.hpp \ 
+           Sources/Logic/ParsingUtils/CommandParser.hpp \
+           Sources/Logic/ParsingUtils/Tokenizer.hpp \
+           Sources/Logic/Items/Item.hpp \
+           Sources/Logic/Items/Circle.hpp \
+           Sources/Logic/Items/Document.hpp \
+           Sources/Logic/Items/Rect.hpp \
+           Sources/Logic/Items/Slide.hpp \
+           Sources/Logic/ItemFactories/CircleFactory.hpp \
+           Sources/Logic/ItemFactories/ItemFactoryRegistry.hpp \
+           Sources/Logic/ItemFactories/RectFactory.hpp \
+           Sources/Logic/Commands/AddCommand.hpp \
+           Sources/Logic/Commands/AddSlideCommand.hpp \
+           Sources/Logic/Commands/DisplayCommand.hpp \
+           Sources/Logic/Commands/LoadCommand.hpp \
+           Sources/Logic/Commands/RemoveCommand.hpp \
+           Sources/Logic/Commands/SaveCommand.hpp \
+           Sources/Logic/Commands/DrawCommand.hpp \
+           Sources/Logic/CommandFactories/AddCommandFactory.hpp \
+           Sources/Logic/CommandFactories/AddSlideCommandFactory.hpp \
+           Sources/Logic/CommandFactories/CommandFactoryRegistry.hpp \
+           Sources/Logic/CommandFactories/DisplayCommandFactory.hpp \
+           Sources/Logic/CommandFactories/LoadCommandFactory.hpp \
+           Sources/Logic/CommandFactories/RemoveCommandFactory.hpp \
+           Sources/Logic/CommandFactories/SaveCommandFactory.hpp \
+           Sources/Logic/CommandFactories/DrawCommandFactory.hpp

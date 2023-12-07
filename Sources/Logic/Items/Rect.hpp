@@ -7,6 +7,7 @@
 #include<unordered_map>
 #include <any>
 
+#include <QRectF>
 
 
 class Rect : public Item
@@ -22,6 +23,10 @@ public:
     Point getBottomRight() const { return m_BottomRight; }
     void accept(iSerializer& visitor)  override;
     
+    auto getDrawableInfo(){
+        return QRectF(m_TopLeft,m_BottomRight);
+    }
+
     [[deprecated]] friend std::ostream& operator<<(std::ostream& out, const Rect& rect) {
         out << "Top left: " << rect.m_TopLeft.x << " " << rect.m_TopLeft.y 
                   << " | Bottom Right: " << rect.m_BottomRight.x << " " << rect.m_BottomRight.y;

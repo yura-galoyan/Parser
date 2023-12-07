@@ -2,7 +2,6 @@
 
 #include <QVBoxLayout>
 
-
 #include <QTextEdit>
 #include <QLineEdit>
 
