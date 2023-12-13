@@ -9,15 +9,15 @@
 #include "SaveCommandFactory.hpp"
 
 /// @brief add Factories ///TODO:
-CommandFactoryRegistry::CommandFactoryRegistry(std::shared_ptr<Document> doc)
+CommandFactoryRegistry::CommandFactoryRegistry()
 {
-    m_registry["add"] = std::make_unique<AddCommandFactory>(doc);
-    m_registry["save"] = std::make_unique<SaveCommandFactory>(doc);
-    m_registry["load"] = std::make_unique<LoadCommandFactory>(doc);
-    m_registry["remove"] = std::make_unique<RemoveCommandFactory>(doc);
-    m_registry["display"] = std::make_unique<DisplayCommandFactory>(doc);
-    m_registry["addslide"] = std::make_unique<AddSlideCommandFactory>(doc);
-    m_registry["draw"] = std::make_unique<DrawCommandFactory>(doc);
+    m_registry["add"] = std::make_unique<AddCommandFactory>();
+    m_registry["save"] = std::make_unique<SaveCommandFactory>();
+    m_registry["load"] = std::make_unique<LoadCommandFactory>();
+    m_registry["remove"] = std::make_unique<RemoveCommandFactory>();
+    m_registry["display"] = std::make_unique<DisplayCommandFactory>();
+    m_registry["addslide"] = std::make_unique<AddSlideCommandFactory>();
+    m_registry["draw"] = std::make_unique<DrawCommandFactory>();
 }
 
 std::unique_ptr<CommandFactory>& CommandFactoryRegistry::operator[](const std::string &key)

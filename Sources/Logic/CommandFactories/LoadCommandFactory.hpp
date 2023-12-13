@@ -9,11 +9,9 @@ class Document;
 class LoadCommandFactory : public CommandFactory
 {
 public:
-    LoadCommandFactory(std::shared_ptr<Document> doc) : m_doc(doc) { }
+    LoadCommandFactory() { }
     std::unique_ptr<Command> createCommand(const std::string& input)  override;
 
-private:
-    std::shared_ptr<Document> m_doc;
 };
 
 

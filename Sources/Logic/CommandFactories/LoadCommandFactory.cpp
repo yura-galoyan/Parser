@@ -17,7 +17,7 @@ slide 1 1
 100 2 300 400 600 200)");
 
 
-    auto cmd = std::make_unique<LoadCommand>(m_doc,std::make_unique<TxtDeserializer>(), std::move(stream) );
+    auto cmd = std::make_unique<LoadCommand>(std::make_unique<TxtDeserializer>(), std::move(stream) );
 
     return std::move(cmd);
 }

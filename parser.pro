@@ -4,6 +4,7 @@ QMAKE_CXXFLAGS += -std=c++17
 
 
 SOURCES += Sources/main.cpp \
+           Sources/Director/Director.cpp \
            Sources/MainWindow.cpp \
            Sources/View/Canvas/Canvas.cpp \
            Sources/View/Canvas/CanvasGraphicsView/CanvasGraphicsView.cpp \
@@ -46,6 +47,7 @@ SOURCES += Sources/main.cpp \
            Sources/Logic/CommandFactories/DrawCommandFactory.cpp
 
 HEADERS += Sources/MainWindow.hpp \
+           Sources/Director/Director.hpp \
            Sources/View/Canvas/Canvas.hpp \
            Sources/View/Canvas/CanvasGraphicsView/CanvasGraphicsView.hpp \
            Sources/View/MenuBar/FileMenu.hpp \

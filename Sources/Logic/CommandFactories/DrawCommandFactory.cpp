@@ -1,6 +1,7 @@
 #include "DrawCommandFactory.hpp"
 
 #include "../Commands/DrawCommand.hpp"
+#include "../../Director/Director.hpp"
 
 // draw -id id -o filepath
 
@@ -11,6 +12,6 @@ std::unique_ptr<Command> DrawCommandFactory::createCommand(const std::string &in
     auto tokens = tokenizer.split(input);
     auto id = std::stoi(tokens[2]);
     auto filePath = tokens[4];
-    auto cmd = std::make_unique<DrawCommand>(m_doc,id,filePath);
+    auto cmd = std::make_unique<DrawCommand>(id,filePath);
     return std::move(cmd);
 }

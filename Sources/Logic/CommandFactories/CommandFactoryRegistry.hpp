@@ -10,12 +10,11 @@
 class CommandFactoryRegistry
 {
 public:
-    CommandFactoryRegistry(std::shared_ptr<Document> doc);
+    CommandFactoryRegistry();
     std::unique_ptr<CommandFactory>& operator[](const std::string& key);
     
 private:
     std::unordered_map<std::string,std::unique_ptr<CommandFactory>> m_registry;
-    std::shared_ptr<Document> m_doc{nullptr};
 };
 
 

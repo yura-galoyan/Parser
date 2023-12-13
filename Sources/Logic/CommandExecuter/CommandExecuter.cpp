@@ -1,7 +1,7 @@
 #include "CommandExecuter.hpp"
 
-CommandExecuter::CommandExecuter(std::shared_ptr<Document> doc)
-    : m_pDocument{doc}, m_commandFactoryRegistry{m_pDocument}
+CommandExecuter::CommandExecuter()
+    :  m_commandFactoryRegistry{}
 {
 }
 

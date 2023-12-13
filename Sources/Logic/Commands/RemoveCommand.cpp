@@ -1,11 +1,12 @@
 #include "RemoveCommand.hpp"
+#include "../../Director/Director.hpp"
 
-RemoveCommand::RemoveCommand(std::shared_ptr<Document> doc) : m_doc(doc)
+RemoveCommand::RemoveCommand()
 {
 }
 
 std::string RemoveCommand::exec()
 {
-    m_doc->getCurrSlide().removeItem(m_id);
+    Director::getInstance().getDocument().getCurrSlide().removeItem(m_id);
     return "item is removed";
 }

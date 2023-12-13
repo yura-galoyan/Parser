@@ -10,11 +10,9 @@ class Slide;
 class DrawCommandFactory : public CommandFactory
 {
 public:
-    DrawCommandFactory(std::shared_ptr<Document> doc,[[maybe_unused]]std::shared_ptr<Slide> slide = nullptr) : m_doc(doc) { };
+    DrawCommandFactory([[maybe_unused]]std::shared_ptr<Slide> slide = nullptr) { };
     std::unique_ptr<Command> createCommand(const std::string& input) override;
 
-private:
-    std::shared_ptr<Document> m_doc;
 };
 
 

@@ -1,19 +1,21 @@
 #include <QImage>
 
 #include "DrawCommand.hpp"
-
-DrawCommand::DrawCommand(std::shared_ptr<Document>& doc, int id, std::string filePath) : m_doc{doc}, m_id{id}, m_filePath{filePath}
+#include "../../Director/Director.hpp"
+#include <QDir>
+DrawCommand::DrawCommand( int id, std::string filePath) : m_id{id}, m_filePath{filePath}
 {
 }
 
 std::string DrawCommand::exec()
 {
-    const auto& slide = m_doc->getSlide(m_id);
+    const auto& slide = Director::getInstance().getDocument().getSlide(m_id);
+    
     QImage image(QSize{1080,1080}, QImage::Format::Format_RGB32);
-    m_renderer.draw(slide,image);
+    Renderer::draw(slide,image);
     image.save(m_filePath.c_str());
-
-    return "Item is drawn and its path is: " + m_filePath;
+    QDir dir(QString::fromStdString(m_filePath));
+    return ("File saved: " + dir.absoluteFilePath(QString::fromStdString(m_filePath))).toStdString();
 }
 
 void DrawCommand::setItemType(std::string itemName)

@@ -1,12 +1,15 @@
 #include "DisplayCommand.hpp"
 
-DisplayCommand::DisplayCommand(std::shared_ptr<Document>& doc) : m_doc{doc}
+
+#include "../../Director/Director.hpp"
+
+DisplayCommand::DisplayCommand() 
 {
 }
 
 std::string DisplayCommand::exec()
 {
-    m_doc->displayContent();
+    Director::getInstance().getDocument().displayContent();
     return "Items are displayed";
 }
 

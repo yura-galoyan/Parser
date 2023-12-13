@@ -10,7 +10,7 @@
 class CommandExecuter
 {
 public:
-    CommandExecuter(std::shared_ptr<Document> doc);
+    CommandExecuter();
 
 
 
@@ -24,7 +24,6 @@ public:
     auto getLogMessage() { return m_sLogMessage; }
 
 private:
-    std::shared_ptr<Document> m_pDocument;
     CommandFactoryRegistry m_commandFactoryRegistry;
     CommandParser m_parser;
     std::unique_ptr<Command> m_pCommand;
