@@ -12,7 +12,8 @@ std::string DrawCommand::exec()
     const auto& slide = Director::getInstance().getDocument().getSlide(m_id);
     
     QImage image(QSize{1080,1080}, QImage::Format::Format_RGB32);
-    Renderer::draw(slide,image);
+    Renderer render;
+    render.draw(slide,image);
     image.save(m_filePath.c_str());
     QDir dir(QString::fromStdString(m_filePath));
     return ("File saved: " + dir.absoluteFilePath(QString::fromStdString(m_filePath))).toStdString();

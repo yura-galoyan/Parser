@@ -11,7 +11,7 @@ std::string AddCommand::exec(){
 
     auto docRef = Director::getInstance().getDocument();
     docRef.getCurrSlide().addItem(std::move(activeItem));
-    emit Director::getInstance().drawOnScreen();
+    Director::getInstance().onDocumentChanged();
     return "item added";
 }
 

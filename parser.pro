@@ -13,6 +13,7 @@ SOURCES += Sources/main.cpp \
            Sources/View/ToolBar/ToolBar.cpp \
            Sources/View/CommandPanel/CommandPanel.cpp \
            Sources/View/SlidesTab/SlidesTab.cpp \
+           Sources/View/SlidesTab/SlideWidget.cpp \
            Sources/View/GraphicItems/GraphicRect.cpp \
            Sources/View/GraphicItems/GraphicsCircle.cpp \
            Sources/View/Visual/IVisualDisplayable.cpp \
@@ -52,9 +53,11 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/View/Canvas/CanvasGraphicsView/CanvasGraphicsView.hpp \
            Sources/View/MenuBar/FileMenu.hpp \
            Sources/View/MenuBar/OptionsMenu.hpp \
+           Sources/View/Renderer/Renderer.hpp \
            Sources/View/ToolBar/ToolBar.hpp \
            Sources/View/CommandPanel/CommandPanel.hpp \
            Sources/View/SlidesTab/SlidesTab.hpp \
+           Sources/View/SlidesTab/SlideWidget.hpp \
            Sources/View/GraphicItems/GraphicRect.hpp \
            Sources/View/GraphicItems/GraphicsCircle.hpp \
            Sources/View/Visual/IVisualDisplayable.hpp \

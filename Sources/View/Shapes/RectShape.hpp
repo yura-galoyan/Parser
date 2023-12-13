@@ -11,6 +11,8 @@ class RectShape : public iShape, public IVisualDisplayable
 public:
     RectShape() : iShape(Item::Type::Rect) {}
     void draw(QPaintDevice& device,Item* item ) override {
+
+
         QPen pen;
         pen.setWidth(2);
         pen.setColor(Qt::red);

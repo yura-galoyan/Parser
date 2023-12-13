@@ -36,8 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     Director::getInstance().setCanvas(canvas);
 
-    m_pSlidesTab->setMinimumWidth(100);
-    connect(&Director::getInstance(),SIGNAL(drawOnScreen));
+    connect(&Director::getInstance(), SIGNAL(refreshDocument()),
+     m_pSlidesTab, SLOT(refreshTabs()));
+
     pMenuBar->addMenu(pFileMenu);
     pMenuBar->addMenu(pOptionsMenu);
     setMenuBar(pMenuBar);

@@ -12,9 +12,7 @@ std::unique_ptr<Command> LoadCommandFactory::createCommand(const std::string &in
     std::stringstream stream(R"(document 2
 slide 0 2
 100 0 100 100 200 200
-200 1 250 250 50
-slide 1 1
-100 2 300 400 600 200)");
+200 1 250 250 50)");
 
 
     auto cmd = std::make_unique<LoadCommand>(std::make_unique<TxtDeserializer>(), std::move(stream) );

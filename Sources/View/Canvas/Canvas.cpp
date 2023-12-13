@@ -8,7 +8,7 @@
 Canvas::Canvas( QWidget *parent)
     : QWidget(parent)
 {
-    setMinimumSize(720,720);
+    setMinimumSize(720,480);
     view = new CanvasGraphicsView();
 
     QVBoxLayout *box = new QVBoxLayout;
@@ -18,4 +18,9 @@ Canvas::Canvas( QWidget *parent)
     box->addLayout(hbx);
 
     setLayout(box);
+
+    QPalette pal = QPalette{};
+    pal.setColor(QPalette::Window, QColor{255,255,0,16});
+    setAutoFillBackground(true); 
+    setPalette(pal);
 }

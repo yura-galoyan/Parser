@@ -9,14 +9,14 @@ CommandPanel::CommandPanel( QWidget *parent)
     :QWidget(parent)
 {
     m_pLogger = new QTextEdit(this);
-    m_pLogger->setMinimumSize(QSize{240,160});
     m_pLogger->setReadOnly(true);
     m_pInputLine = new QLineEdit(this);
     connect(m_pInputLine,SIGNAL(returnPressed()),SLOT(logCommand()));
-    setLayout(new QVBoxLayout);
+    auto vboxLayout = new QVBoxLayout;
+    setLayout(vboxLayout);
     layout()->addWidget(m_pLogger);
     layout()->addWidget(m_pInputLine);
-
+    setMaximumHeight(200);
 }
 
 void CommandPanel::logCommand(){

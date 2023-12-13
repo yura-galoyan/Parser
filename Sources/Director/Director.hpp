@@ -4,9 +4,10 @@
 #include <memory>
 #include "../Logic/Items/Document.hpp"
 
+#include <QLabel>
 #include <QWidget>
 
-class Director
+class Director : public QWidget
 {
     Q_OBJECT
 public:
@@ -15,13 +16,18 @@ public:
     void setCanvas(QWidget* canvas);
     QWidget* getCanvas();
 
+    void onDocumentChanged();
+
 signals:
-    void drawOnScreen(const Slide& slide,QPaintDevice& device);
+    void refreshDocument();
 
 private:
-    Director() = default;
+    Director(QWidget* parent = nullptr) :QWidget(parent){
+        
+    };
+    QLabel* m_pLabel{nullptr};
     Document m_document;
-    QWidget* m_pCanvas;
+    QWidget* m_pCanvas{nullptr};
 
 
 private:

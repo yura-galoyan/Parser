@@ -15,5 +15,7 @@ std::string LoadCommand::exec()
     
     m_serializer->visit(Director::getInstance().getDocument());
 
-    return "";
+    Director::getInstance().onDocumentChanged();
+
+    return "files are loaded";
 }
