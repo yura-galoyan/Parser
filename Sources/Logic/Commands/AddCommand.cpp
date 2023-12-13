@@ -1,14 +1,17 @@
 #include "AddCommand.hpp"
-#include "../Items/Document.hpp"
 
-AddCommand::AddCommand(std::shared_ptr<Document> doc) 
-: m_doc{doc}
+#include "../../Director/Director.hpp"
+
+AddCommand::AddCommand()
 {
 
 }
 
 std::string AddCommand::exec(){
-    m_doc->getCurrSlide().addItem(std::move(activeItem));
+
+    auto docRef = Director::getInstance().getDocument();
+    docRef.getCurrSlide().addItem(std::move(activeItem));
+    emit Director::getInstance().drawOnScreen();
     return "item added";
 }
 

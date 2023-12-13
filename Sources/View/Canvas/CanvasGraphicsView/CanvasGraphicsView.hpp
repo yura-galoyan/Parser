@@ -11,11 +11,11 @@
 #include <QDebug>
 #include <QList>
 
-class CanvasGraphicsView : public QGraphicsView
+class CanvasGraphicsView : public QWidget
 {
     Q_OBJECT
 public:
-    CanvasGraphicsView(QGraphicsScene *pScene, QWidget *parent = nullptr);
+    CanvasGraphicsView( QWidget *parent = nullptr);
    
 protected:
     void mousePressEvent(QMouseEvent *event) override;

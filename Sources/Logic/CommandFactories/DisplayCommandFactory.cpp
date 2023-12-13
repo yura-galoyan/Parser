@@ -4,6 +4,6 @@
 
 std::unique_ptr<Command> DisplayCommandFactory::createCommand(const std::string &input) 
 {
-    auto cmd = std::make_unique<DisplayCommand>(m_doc);
+    auto cmd = std::make_unique<DisplayCommand>();
     return std::move(cmd);
 }

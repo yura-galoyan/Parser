@@ -5,8 +5,8 @@
 #include <QTextEdit>
 #include <QLineEdit>
 
-CommandPanel::CommandPanel(std::shared_ptr<Document> doc, QWidget *parent)
-    : m_pDocument{doc}, QWidget(parent)
+CommandPanel::CommandPanel( QWidget *parent)
+    :QWidget(parent)
 {
     m_pLogger = new QTextEdit(this);
     m_pLogger->setMinimumSize(QSize{240,160});
@@ -23,7 +23,7 @@ void CommandPanel::logCommand(){
     auto text = m_pInputLine->text();
 
 
-    CommandExecuter m_commandExecuter{m_pDocument};
+    CommandExecuter m_commandExecuter{};
 
     m_commandExecuter.setCommand(text.toStdString());
 

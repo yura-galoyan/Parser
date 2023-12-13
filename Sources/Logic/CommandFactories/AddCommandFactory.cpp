@@ -6,7 +6,7 @@
 #include <iomanip>
 std::unique_ptr<Command> AddCommandFactory::createCommand(const std::string& input) 
 {
-    auto cmd = std::make_unique<AddCommand>(m_doc);
+    auto cmd = std::make_unique<AddCommand>();
     const auto tokens = tokenizer.split(input);    
 
     //  "add -type rect -x1 1 -y1 2 -x2 3 -y2 4";

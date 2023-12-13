@@ -1,13 +1,14 @@
 #include "AddSlideCommand.hpp"
 
-#include "../Items/Document.hpp"
+#include "../../Director/Director.hpp"
 
-AddSlideCommand::AddSlideCommand(std::shared_ptr<Document> doc) : m_doc{doc}
+AddSlideCommand::AddSlideCommand()
 {
 }
 
 std::string AddSlideCommand::exec()
 {
-    m_doc->addSlide(Slide{});
+    auto pDocRef = Director::getInstance().getDocument();
+    pDocRef.addSlide(Slide{});
     return "slide added";
 }

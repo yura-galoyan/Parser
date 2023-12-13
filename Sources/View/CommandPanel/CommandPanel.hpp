@@ -14,7 +14,7 @@ class CommandPanel : public QWidget
 {
     Q_OBJECT
 public:
-    CommandPanel(std::shared_ptr<Document> doc,  QWidget* parent);
+    CommandPanel( QWidget* parent = nullptr);
 
 public slots:
     void logCommand();
@@ -22,10 +22,6 @@ public slots:
 private:
     QTextEdit* m_pLogger;
     QLineEdit* m_pInputLine;
-
-    std::shared_ptr<Document> m_pDocument;
-
-
 
 };
 

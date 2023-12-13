@@ -8,8 +8,8 @@
 Canvas::Canvas( QWidget *parent)
     : QWidget(parent)
 {
-    scene = new QGraphicsScene(QRectF(0, 0, 1080, 640));
-    view = new CanvasGraphicsView(scene);
+    setMinimumSize(720,720);
+    view = new CanvasGraphicsView();
 
     QVBoxLayout *box = new QVBoxLayout;
     QHBoxLayout *hbx = new QHBoxLayout;

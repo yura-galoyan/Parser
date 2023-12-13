@@ -8,7 +8,7 @@
 class IVisualDisplayable
 {
 public:
-    void draw( QPaintDevice& imagem , Item* item);
+    virtual void draw( QPaintDevice& image , Item* item);
 };
 
 #endif //VISUAL_DISPLAYABLE_HPP

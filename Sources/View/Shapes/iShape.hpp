@@ -3,13 +3,14 @@
 
 #include "../../Logic/Items/Item.hpp"
 #include <QImage>
+#include <QPen>
+#include <QPainter>
 
 class iShape
 {
     Item::Type type;
 public:
     iShape(Item::Type t) { type = t; }
-    virtual void draw(QPaintDevice& image ) = 0;
     virtual std::unique_ptr<iShape> clone() = 0;
     void setItem(Item* item) { m_item = item; };
 

@@ -1,9 +1,10 @@
 #include "../Serializer/iSerializer.hpp"
 #include "LoadCommand.hpp"
+#include "../../Director/Director.hpp"
 
 
-LoadCommand::LoadCommand(std::shared_ptr<Document> doc, std::unique_ptr<iSerializer> serializer, std::stringstream input) 
-    : m_doc{doc}, m_input{std::move(input)}, m_serializer{std::move(serializer)}
+LoadCommand::LoadCommand(std::unique_ptr<iSerializer> serializer, std::stringstream input) 
+    : m_input{std::move(input)}, m_serializer{std::move(serializer)}
 {
     m_serializer->setStream(std::move(m_input));
 }
@@ -12,7 +13,7 @@ LoadCommand::LoadCommand(std::shared_ptr<Document> doc, std::unique_ptr<iSeriali
 std::string LoadCommand::exec()
 {
     
-    m_serializer->visit(*m_doc);
+    m_serializer->visit(Director::getInstance().getDocument());
 
     return "";
 }

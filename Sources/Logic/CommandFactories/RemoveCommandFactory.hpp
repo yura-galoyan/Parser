@@ -9,11 +9,9 @@ class Document;
 class RemoveCommandFactory : public CommandFactory
 {
 public:
-    RemoveCommandFactory(std::shared_ptr<Document> doc) : m_doc(doc) { }
+    RemoveCommandFactory() { }
     std::unique_ptr<Command> createCommand(const std::string& input)  override;
 
-private:
-    std::shared_ptr<Document> m_doc;
 };
 
 
