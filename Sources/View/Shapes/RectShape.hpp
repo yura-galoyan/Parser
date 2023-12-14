@@ -22,7 +22,7 @@ public:
 
         painter.setPen(pen);
         auto pRectItem = dynamic_cast<Rect*>(item);
-        painter.drawRect(pRectItem->getDrawableInfo());
+        painter.drawRect(pRectItem->getBoundingBox().getDrawableRect());
         painter.end();
     }
     

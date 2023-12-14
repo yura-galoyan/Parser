@@ -14,14 +14,9 @@ public:
         m_type = Item::Type::Circle;
     };
     Circle(Point center, double radius);
+    Circle::Circle(Point p1, Point p2);
     void accept(iSerializer& visitor) override;
-    auto getDrawableInfo() { return std::make_pair(m_center, m_radius); }
     std::unique_ptr<Item> clone() override { return std::make_unique<Circle>(*this); };
-
-private:
-    Point m_center;
-    double m_radius;
-
 };
 
 

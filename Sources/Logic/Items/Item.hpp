@@ -2,20 +2,14 @@
 #define ITEM_HPP
 
 #include <unordered_map>
-#include <iostream>
 #include <memory>
 #include <string>
-#include <any>
 
-//
-#include <QPointF>
+
+
+#include "Utils/BoundingBox.hpp"
 
 class iSerializer;
-struct Point{
-    double x;
-    double y;
-    operator QPointF() { return QPointF(x,y);}
-};
 
 class Item
 {
@@ -25,8 +19,7 @@ public:
     };
     enum class Type : std::size_t{
         Rect = 100, Circle = 200, Text = 300
-    }; 
-    using Attributes = std::unordered_map<std::string,std::any>;
+    };
     
 public:
     virtual void accept(iSerializer& serial);
@@ -35,6 +28,19 @@ public:
     
     void setid(std::size_t id) { m_id = id;}
     auto getId() { return m_id;}
+
+
+    auto getBoundingBox(){
+        return m_BBox;
+    }
+
+    void setBoundingBox(Point p1, Point p2){
+        m_BBox = BoundingBox{p1,p2};
+    }
+
+    auto& boundingBox(){
+        return m_BBox;
+    }
 
 private:
     std::size_t getNextId(){
@@ -47,6 +53,7 @@ protected:
 
 private:
     std::size_t m_id;
+    BoundingBox m_BBox;
 
 };
 

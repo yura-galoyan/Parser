@@ -21,9 +21,7 @@ public:
 
 
         auto pCircleItem = dynamic_cast<Circle*>(item);
-        auto drawableCenterRadius = pCircleItem->getDrawableInfo();
-        auto& dcr = drawableCenterRadius;
-        painter.drawEllipse(dcr.first, dcr.second, dcr.second);
+        painter.drawEllipse(pCircleItem->getBoundingBox().getDrawableRect());
     }
     std::unique_ptr<iShape> clone() override { 
         return std::make_unique<CircleShape>(); 
