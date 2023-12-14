@@ -19,6 +19,11 @@ void SlidesTab::refreshTabs(){
     Renderer renderer;
 
 
+    for(const auto& slide : Director::getInstance().getDocument());
+    m_SlidesVec
+
+    std::cout << "drawing slides on left side" << std::endl;
+
     for(auto slideWidget : m_SlidesVec){
         renderer.draw(slideWidget->getSlide(), *slideWidget);
     }
