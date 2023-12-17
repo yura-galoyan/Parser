@@ -49,13 +49,16 @@ void Slide::displayContent() const
 void Slide::accept(iSerializer &serializer)
 {
     serializer.visit(name);
+    std::cout << "name: " << name << std::endl;
     serializer.visit(m_id);
+    std::cout << "slide m_id: " << m_id << std::endl;
     serializer.visit(m_numberOfItems);
     m_items.resize(m_numberOfItems);
     for(auto& item: m_items){
         if(!item){
             Item::Type t;
             serializer.visit(t);
+            std::cout << "item::Type: "  << static_cast<std::size_t>(t) << std::endl;
             
         }
         serializer.visit(item);

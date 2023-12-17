@@ -32,10 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
     auto pOptionsMenu = new OptionsMenu;
 
     auto canvas = new Canvas;
+
     auto commandPanel = new CommandPanel;
 
+    Director::getInstance().setMainWindow(this);
     Director::getInstance().setCanvas(canvas);
-
+    
     connect(&Director::getInstance(), SIGNAL(refreshDocument()),
      m_pSlidesTab, SLOT(refreshTabs()));
 
@@ -47,10 +49,20 @@ MainWindow::MainWindow(QWidget *parent)
 
     centralWidget()->setLayout(qvbox);
 
+
+    auto canvasBox = new QVBoxLayout;
+    canvasBox->addWidget(canvas);
+
     qhbox->addWidget(m_pSlidesTab);
-    qhbox->addWidget(canvas);
+    qhbox->addLayout(canvasBox);
 
     qvbox->addLayout(qhbox);
     qvbox->addWidget(commandPanel);
     
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    Director::getInstance().onDocumentChanged();
+    QMainWindow::resizeEvent(event);
 }

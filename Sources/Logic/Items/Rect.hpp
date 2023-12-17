@@ -2,13 +2,6 @@
 #define RECT_HPP
 
 #include "Item.hpp"
-#include <ostream>
-
-#include<unordered_map>
-#include <any>
-
-#include <QRectF>
-
 
 class Rect : public Item
 {

@@ -4,40 +4,48 @@
 Document::Document()
 {
     addSlide(Slide{});
-    curr_slide_id = 0;
+    m_CurrSlideId = 0;
 }
 
 void Document::addSlide(const Slide& slide)
 {
-
-    ++curr_slide_id;
     ++m_numberOfSlides;
+    m_CurrSlideId = m_numberOfSlides - 1;
     m_slides.push_back(slide);
 }
 
 void Document::addSlide(Slide&& slide)
 {
-    ++curr_slide_id;
     ++m_numberOfSlides;
+    m_CurrSlideId = m_numberOfSlides - 1;
     m_slides.push_back(std::move(slide));
 }
 
+void Document::changeSlide(std::size_t id)
+{
+    m_CurrSlideId = id;
+}
+
+
 void Document::accept(iSerializer &serial)
 {
-    // write another accept function, for deserialization, 
-    // where number of all slides and items is precalculated. 
     serial.visit(name);
     serial.visit(m_numberOfSlides);
     m_slides.resize(m_numberOfSlides);
-
     for(auto& slide : m_slides){
         slide.accept(serial);
     }
 }
 
+void Document::clear()
+{
+    m_slides.clear();
+    m_slides.shrink_to_fit();
+}
+
 Slide &Document::getCurrSlide()
 {
-    return m_slides[curr_slide_id];
+    return m_slides[m_CurrSlideId];
 }
 
 void Document::displayContent() const

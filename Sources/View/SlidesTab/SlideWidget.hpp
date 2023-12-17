@@ -3,9 +3,9 @@
 
 #include "../../Logic/Items/Slide.hpp"
 
-#include <QWidget>
+#include <QLabel>
 
-class SlideWidget : public QWidget
+class SlideWidget : public QLabel
 {
     Q_OBJECT
 public:

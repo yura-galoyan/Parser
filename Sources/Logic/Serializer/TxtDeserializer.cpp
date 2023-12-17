@@ -1,11 +1,13 @@
 #include "TxtDeserializer.hpp"
 
+#include <iostream>
 
 #include "../Items/Document.hpp"
 #include "../Items/Circle.hpp"
 #include "../Items/Slide.hpp"
 #include "../Items/Rect.hpp"
 #include "../Items/Item.hpp"
+#include "../Items/Text.hpp"
 
 void TxtDeserializer::visit(Document &val)
 {
@@ -30,7 +32,8 @@ void TxtDeserializer::visit(Point& val)
 
 void TxtDeserializer::visit(std::string&& val) 
 {
-    // empty
+    result >> val;
+    m_lastToken = val;
 }
 
 void TxtDeserializer::visit(std::string& val) 
@@ -65,7 +68,11 @@ void TxtDeserializer::visit(std::unique_ptr<Item>& val)
         case Item::Type::Circle:
             val = std::make_unique<Circle>();
             break;
+        case Item::Type::Text:
+            val = std::make_unique<Text>();
+            break;
         default:
+            std::cout << "undefined item" << std::endl;
             break;
     }
     val->accept(*this);

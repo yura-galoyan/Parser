@@ -13,13 +13,8 @@
 class Canvas : public QWidget
 {
     Q_OBJECT
-private:
-    QGraphicsScene *scene;
-    CanvasGraphicsView *view;
-
 public:
     Canvas( QWidget *parent = nullptr);
-    CanvasGraphicsView *&getView() { return view; }
 };
 
 #endif // CANVAS_WDIGET_HPP

@@ -14,15 +14,12 @@ public:
         pen.setWidth(2);
         pen.setColor(Qt::red);
         pen.setBrush(QBrush(Qt::red));
-
         QPainter painter(&image);
         painter.setPen(pen);
-
-
-
         auto pCircleItem = dynamic_cast<Circle*>(item);
         painter.drawEllipse(pCircleItem->getBoundingBox().getDrawableRect());
     }
+    
     std::unique_ptr<iShape> clone() override { 
         return std::make_unique<CircleShape>(); 
     };

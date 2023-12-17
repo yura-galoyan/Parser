@@ -1,9 +1,11 @@
 #ifndef SLIDES_TAB_HPP
 #define SLIDES_TAB_HPP
 
-#include <QWidget>
 #include "SlideWidget.hpp"
+
+#include <QWidget>
 #include <vector>
+#include <QVBoxLayout>
 
 class SlidesTab : public QWidget
 {
@@ -16,6 +18,8 @@ public slots:
 
 private:
     std::vector<SlideWidget*> m_SlidesVec;
+    QVBoxLayout* m_pVBoxLayout;
+
 
 };
 

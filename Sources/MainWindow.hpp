@@ -11,14 +11,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(QWidget* parent = nullptr);
-
+    virtual void resizeEvent(QResizeEvent *event);
 
 // will be changed
 private:
     std::shared_ptr<Document> m_pDocument;
     SlidesTab* m_pSlidesTab;
-
-
 };
 
 

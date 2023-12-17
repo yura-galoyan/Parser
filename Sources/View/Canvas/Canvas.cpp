@@ -1,5 +1,6 @@
 #include <QGraphicsItem>
 #include <QVBoxLayout>
+#include <QScrollBar>
 #include <QSlider>
 #include <QLabel>
 
@@ -9,14 +10,8 @@ Canvas::Canvas( QWidget *parent)
     : QWidget(parent)
 {
     setMinimumSize(720,480);
-    view = new CanvasGraphicsView();
 
     QVBoxLayout *box = new QVBoxLayout;
-    QHBoxLayout *hbx = new QHBoxLayout;
-
-    box->addWidget(view);
-    box->addLayout(hbx);
-
     setLayout(box);
 
     QPalette pal = QPalette{};

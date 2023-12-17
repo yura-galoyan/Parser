@@ -7,6 +7,7 @@
 #include "LoadCommandFactory.hpp"
 #include "RemoveCommandFactory.hpp"
 #include "SaveCommandFactory.hpp"
+#include "ChangeSlideCommandFactory.hpp"
 
 /// @brief add Factories ///TODO:
 CommandFactoryRegistry::CommandFactoryRegistry()
@@ -18,6 +19,7 @@ CommandFactoryRegistry::CommandFactoryRegistry()
     m_registry["display"] = std::make_unique<DisplayCommandFactory>();
     m_registry["addslide"] = std::make_unique<AddSlideCommandFactory>();
     m_registry["draw"] = std::make_unique<DrawCommandFactory>();
+    m_registry["change"] = std::make_unique<ChangeSlideCommandFactory>();
 }
 
 std::unique_ptr<CommandFactory>& CommandFactoryRegistry::operator[](const std::string &key)

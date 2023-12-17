@@ -1,5 +1,7 @@
 #include "CommandExecuter.hpp"
 
+#include <iostream>
+
 CommandExecuter::CommandExecuter()
     :  m_commandFactoryRegistry{}
 {

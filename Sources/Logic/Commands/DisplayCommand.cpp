@@ -2,6 +2,7 @@
 
 
 #include "../../Director/Director.hpp"
+#include "../Items/Document.hpp"
 
 DisplayCommand::DisplayCommand() 
 {

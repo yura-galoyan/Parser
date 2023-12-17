@@ -8,6 +8,7 @@
 #include "../../Logic/Items/Item.hpp"
 
 #include "RectShape.hpp"
+#include "TextShape.hpp"
 #include "CircleShape.hpp"
 
 class ShapeRegistry
@@ -15,6 +16,7 @@ class ShapeRegistry
 public:
     ShapeRegistry(){
         shapes.insert({Item::Type::Rect, std::make_unique<RectShape>()});
+        shapes.insert({Item::Type::Text, std::make_unique<TextShape>()});
         shapes.insert({Item::Type::Circle, std::make_unique<CircleShape>()});
     }
 

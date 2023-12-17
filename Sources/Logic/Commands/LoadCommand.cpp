@@ -13,6 +13,8 @@ LoadCommand::LoadCommand(std::unique_ptr<iSerializer> serializer, std::stringstr
 std::string LoadCommand::exec()
 {
     
+    Director::getInstance().getDocument().clear();
+    
     m_serializer->visit(Director::getInstance().getDocument());
 
     Director::getInstance().onDocumentChanged();
