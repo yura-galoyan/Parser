@@ -15,8 +15,8 @@ public:
 
         QPen pen;
         pen.setWidth(2);
-        pen.setColor(Qt::red);
-        pen.setBrush(QBrush(Qt::red));
+        pen.setColor(item->getColor());
+        pen.setBrush(QBrush(item->getColor()));
 
         QPainter painter(&device);
 

@@ -1,8 +1,9 @@
 #include "RectFactory.hpp"
 #include "../Items/Rect.hpp"
-
+#include "ColorLibrary.hpp"
 std::unique_ptr<Item> RectFactory::createItem(const Tokenizer::Tokens &input) const
 {
     auto rect = std::make_unique<Rect>( Point{std::stod(input[4]),std::stod(input[6])}, Point{std::stod(input[8]),std::stod(input[10])} );
+    rect->setColor( ColorLibrary::getColorFrom(input[12]) );
     return std::move(rect);
 }

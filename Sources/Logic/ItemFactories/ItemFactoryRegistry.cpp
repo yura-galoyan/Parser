@@ -2,11 +2,13 @@
 
 #include "RectFactory.hpp"
 #include "CircleFactory.hpp"
+#include "TextFactory.hpp"
 
 ItemFactoryRegistry::ItemFactoryRegistry()
 {
     m_registry["rect"] = std::make_unique<RectFactory>();
     m_registry["circle"] = std::make_unique<CircleFactory>();
+    m_registry["text"] = std::make_unique<TextFactory>();
 }
 
 std::unique_ptr<ItemFactory>& ItemFactoryRegistry::operator[](const std::string& key)

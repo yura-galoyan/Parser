@@ -29,6 +29,13 @@ public:
     void setid(std::size_t id) { m_id = id;}
     auto getId() { return m_id;}
 
+    void setColor(Qt::GlobalColor color){
+        m_color = color;
+    }
+
+    Qt::GlobalColor getColor(){
+        return m_color;
+    }
 
     auto getBoundingBox(){
         return m_BBox;
@@ -54,6 +61,7 @@ protected:
 private:
     std::size_t m_id;
     BoundingBox m_BBox;
+    Qt::GlobalColor m_color;
 
 };
 
