@@ -1,10 +1,11 @@
 #include "Document.hpp"
 #include "../Serializer/iSerializer.hpp"
 
-Document::Document()
-{
-    addSlide(Slide{});
+#include <iostream>
+
+Document::Document(){
     m_CurrSlideId = 0;
+    addSlide(Slide{});
 }
 
 void Document::addSlide(const Slide& slide)
@@ -43,9 +44,9 @@ void Document::clear()
     m_slides.shrink_to_fit();
 }
 
-Slide &Document::getCurrSlide()
+Slide& Document::getCurrSlide()
 {
-    return m_slides[m_CurrSlideId];
+    return m_slides.at(m_CurrSlideId);
 }
 
 void Document::displayContent() const

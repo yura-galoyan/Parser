@@ -58,7 +58,7 @@ void Director::onDocumentChanged()
 
     renderer.draw(m_document->getCurrSlide(), image);
     std::cout << "curr slide id: " << m_document->getCurrSlideId() << std::endl;
-
+    
     auto pixmap = QPixmap::fromImage(image);
 
     if(pixmap.isNull()){

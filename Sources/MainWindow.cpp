@@ -13,10 +13,9 @@
 #include "View/MenuBar/FileMenu.hpp"
 #include "View/CommandPanel/CommandPanel.hpp"
 #include "View/ToolBar/ToolBar.hpp"
-#include "View/Renderer/Renderer.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), m_pDocument{std::make_shared<Document>()}
+    : QMainWindow(parent)
 {
     setCentralWidget(new QWidget);
 

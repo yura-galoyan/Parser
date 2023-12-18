@@ -15,8 +15,7 @@ std::string SaveCommand::exec()
 {
     m_serializer->visit(Director::getInstance().getDocument());
     auto result = m_serializer->stealResult();
-    std::cout << "file contents will be:\n" << 
-    result.str() << std::endl;
+    std::cout << "file contents will be:\n" << result.str() << std::endl;
 
     return "Document saved succesfully!!!";
 }

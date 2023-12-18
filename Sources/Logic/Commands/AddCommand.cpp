@@ -9,9 +9,10 @@ AddCommand::AddCommand()
 
 std::string AddCommand::exec(){
 
-    auto docRef = Director::getInstance().getDocument();
+    auto& docRef = Director::getInstance().getDocument();
     docRef.getCurrSlide().addItem(std::move(activeItem));
     Director::getInstance().onDocumentChanged();
+    
     return "item added";
 }
 

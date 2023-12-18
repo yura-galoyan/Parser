@@ -8,5 +8,6 @@ RemoveCommand::RemoveCommand()
 std::string RemoveCommand::exec()
 {
     Director::getInstance().getDocument().getCurrSlide().removeItem(m_id);
+    Director::getInstance().onDocumentChanged();
     return "item is removed";
 }

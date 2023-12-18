@@ -39,12 +39,10 @@ void SlidesTab::refreshTabs(){
         m_pVBoxLayout->addWidget(pSlideWidget);
     }
 
-
-
     for(auto& slideWidget : m_SlidesVec){
 
-        auto width = 1920;
-        auto height = 1080;
+        constexpr auto width = 1920;
+        constexpr auto height = 1080;
 
 
         slideWidget->setScaledContents(true);
@@ -55,8 +53,8 @@ void SlidesTab::refreshTabs(){
   
   
         QPixmap pixmap = QPixmap::fromImage(image);
-        int w = width / 8;
-        int h = height / 8;
+        constexpr int w = width / 8;
+        constexpr int h = height / 8;
 
         slideWidget->setPixmap(pixmap.scaled(w,h,Qt::KeepAspectRatio,Qt::SmoothTransformation));
     }

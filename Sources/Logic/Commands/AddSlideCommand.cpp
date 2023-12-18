@@ -8,7 +8,7 @@ AddSlideCommand::AddSlideCommand()
 
 std::string AddSlideCommand::exec()
 {
-    auto pDocRef = Director::getInstance().getDocument();
+    auto& pDocRef = Director::getInstance().getDocument();
     pDocRef.addSlide(Slide{});
     return "slide added";
 }

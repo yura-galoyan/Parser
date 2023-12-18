@@ -15,7 +15,6 @@ public:
 
 // will be changed
 private:
-    std::shared_ptr<Document> m_pDocument;
     SlidesTab* m_pSlidesTab;
 };
 
