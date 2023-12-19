@@ -48,6 +48,7 @@ void SlidesTab::refreshTabs(){
         slideWidget->setScaledContents(true);
 
         QImage image(width,height, QImage::Format::Format_RGB32);
+        image.fill(Qt::white);
 
         renderer.draw(slideWidget->getSlide(), image);
   

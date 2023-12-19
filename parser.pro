@@ -7,17 +7,13 @@ SOURCES += Sources/main.cpp \
            Sources/Director/Director.cpp \
            Sources/MainWindow.cpp \
            Sources/View/Canvas/Canvas.cpp \
-           Sources/View/Canvas/CanvasGraphicsView/CanvasGraphicsView.cpp \
            Sources/View/MenuBar/FileMenu.cpp \
            Sources/View/MenuBar/OptionsMenu.cpp \
            Sources/View/ToolBar/ToolBar.cpp \
            Sources/View/CommandPanel/CommandPanel.cpp \
            Sources/View/SlidesTab/SlidesTab.cpp \
            Sources/View/SlidesTab/SlideWidget.cpp \
-           Sources/View/GraphicItems/GraphicRect.cpp \
-           Sources/View/GraphicItems/GraphicsCircle.cpp \
            Sources/View/Visual/IVisualDisplayable.cpp \
-           Sources/InputOutput/InputOutputSystem.cpp \
            Sources/Logic/CommandExecuter/CommandExecuter.cpp \
            Sources/Logic/Serializer/TxtDeserializer.cpp \ 
            Sources/Logic/Serializer/TxtSerializer.cpp \ 
@@ -55,7 +51,6 @@ SOURCES += Sources/main.cpp \
 HEADERS += Sources/MainWindow.hpp \
            Sources/Director/Director.hpp \
            Sources/View/Canvas/Canvas.hpp \
-           Sources/View/Canvas/CanvasGraphicsView/CanvasGraphicsView.hpp \
            Sources/View/MenuBar/FileMenu.hpp \
            Sources/View/MenuBar/OptionsMenu.hpp \
            Sources/View/Renderer/Renderer.hpp \
@@ -63,10 +58,7 @@ HEADERS += Sources/MainWindow.hpp \
            Sources/View/CommandPanel/CommandPanel.hpp \
            Sources/View/SlidesTab/SlidesTab.hpp \
            Sources/View/SlidesTab/SlideWidget.hpp \
-           Sources/View/GraphicItems/GraphicRect.hpp \
-           Sources/View/GraphicItems/GraphicsCircle.hpp \
            Sources/View/Visual/IVisualDisplayable.hpp \
-           Sources/InputOutput/InputOutputSystem.hpp \
            Sources/Logic/CommandExecuter/CommandExecuter.hpp \
            Sources/Logic/Serializer/TxtDeserializer.hpp \ 
            Sources/Logic/Serializer/TxtSerializer.hpp \ 

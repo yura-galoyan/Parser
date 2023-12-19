@@ -8,8 +8,6 @@
 #include <QWidget>
 #include <QPointF>
 
-#include "CanvasGraphicsView/CanvasGraphicsView.hpp"
-
 class Canvas : public QWidget
 {
     Q_OBJECT

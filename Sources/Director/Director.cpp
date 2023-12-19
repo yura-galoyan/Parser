@@ -54,7 +54,7 @@ void Director::onDocumentChanged()
 
 
     QImage image(QSize{width,height}, QImage::Format::Format_RGB32);
-
+    image.fill(Qt::white);
 
     renderer.draw(m_document->getCurrSlide(), image);
     std::cout << "curr slide id: " << m_document->getCurrSlideId() << std::endl;
