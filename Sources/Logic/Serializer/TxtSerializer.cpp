@@ -2,7 +2,6 @@
 
 #include "../Items/Item.hpp"
 #include "../Items/Slide.hpp"
-#include "../Items/Circle.hpp"
 #include "../Items/Document.hpp"
 
 
@@ -60,4 +59,9 @@ void TxtSerializer::visit(Document& val)
 {
     result << "\n";
     val.accept(*this);
+}
+
+void TxtSerializer::visit(Qt::GlobalColor &color)
+{
+    result << static_cast<std::size_t>(color);
 }

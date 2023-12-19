@@ -26,6 +26,7 @@ public:
     virtual void visit(Slide& slide) = 0;
     virtual void visit(std::vector<Slide>& slides) = 0;
     virtual void visit(Document& circle) = 0;
+    virtual void visit(Qt::GlobalColor& color) = 0;
 
 public:
     auto stealResult() { return std::move(result); }

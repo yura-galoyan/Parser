@@ -16,6 +16,7 @@ public:
     void visit(std::vector<Slide>& slides) override;
     void visit(Slide& val) override ;
     void visit(Document& val) override ;
+    void visit(Qt::GlobalColor& color) override ;
 
 };
 

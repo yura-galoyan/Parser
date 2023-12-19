@@ -17,4 +17,5 @@ void Text::accept(iSerializer &visitor)
     visitor.visit(boundingBox().m_topLeft);
     visitor.visit(boundingBox().m_bottomRight);
     visitor.visit(m_text);
+    visitor.visit(getColor());
 }

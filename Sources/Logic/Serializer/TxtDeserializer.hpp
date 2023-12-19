@@ -16,6 +16,7 @@ public:
     void visit(Slide& slide) override ;
     void visit(std::vector<Slide>& slides) override ;
     void visit(Document& doc) override ;
+    void visit(Qt::GlobalColor& color) override ;
 
 private:
     Item::Type m_last_type;

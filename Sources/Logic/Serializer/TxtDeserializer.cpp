@@ -14,7 +14,6 @@ void TxtDeserializer::visit(Document &val)
     val.accept(*this);
 }
 
-
 void TxtDeserializer::visit(double& val) 
 {
     result >> val;
@@ -85,8 +84,14 @@ void TxtDeserializer::visit(Slide& val)
 
 void TxtDeserializer::visit(std::vector<Slide>& slides)
 {
-    
     for(auto& slide : slides){
         slide.accept(*this);
     }
+}
+
+void TxtDeserializer::visit(Qt::GlobalColor& color)
+{
+    std::size_t c;
+    result >> c;
+    color = static_cast<Qt::GlobalColor>(c);
 }

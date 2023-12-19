@@ -33,7 +33,7 @@ public:
         m_color = color;
     }
 
-    Qt::GlobalColor getColor(){
+    Qt::GlobalColor& getColor(){
         return m_color;
     }
 

@@ -13,4 +13,5 @@ void Rect::accept(iSerializer &visitor)
     Item::accept(visitor);
     visitor.visit(boundingBox().m_topLeft);
     visitor.visit(boundingBox().m_bottomRight);
+    visitor.visit(getColor());
 }
